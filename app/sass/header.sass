@@ -3,13 +3,15 @@
 @import "_mixins.sass"
 
 +font-face("RobotoRegular", "../fonts/RobotoRegular/RobotoRegular", $file-formats: eot woff ttf)
++font-face("RobotoLight", "../fonts/RobotoLight/RobotoLight", $file-formats: eot woff ttf)
 +font-face("OpenSansBold", "../fonts/OpenSansBold/OpenSansBold", $file-formats: eot woff ttf)
++font-face("Inform", "../fonts/Inform/Inform", $file-formats: eot woff ttf)
 
 body
 	font-size: 16px
 	min-width: 320px
 	position: relative
-	padding-bottom: 100px
+	padding-bottom: 50px
 	line-height: 1.6
 	font-family: "RobotoRegular", sans-serif
 	overflow-x: hidden
@@ -22,6 +24,10 @@ body
 	margin-top: 0!important
 .mb0
 	margin-bottom: 0!important
+.mt1
+	margin-top: 10px
+.mb1
+	margin-bottom: 10px
 .mt2
 	margin-top: 20px
 .mb2
@@ -70,6 +76,25 @@ input,textarea,button
 	color: $textColor
 	margin-bottom: 25px
 
+.title-defoult
+	font-family: "RobotoLight"
+	font-weight: 100
+	font-size: 32px	
+
+.text-variant
+	font-family: "RobotoLight"
+	font-weight: 100
+	font-size: 19px		
+	span
+		font-family: 'OpenSansBold'
+		font-weight: 600
+
+.text
+	color: $textColor
+	font-family: "RobotoLight"
+	font-weight: 100
+	line-height: 30px
+
 .loader-wrap
 	position: fixed
 	z-index: 1000
@@ -94,8 +119,21 @@ input,textarea,button
 header
 	box-shadow: 0 1px 3px $blackLight
 	.logo
+		display: inline-block
+		vertical-align: bottom
+		width: 165px
 		img
-			width: 166px
+			width: 146px
+	.pnone-block
+		display: inline-block
+		vertical-align: bottom
+		width: 165px
+		a
+			display: block
+			color: $main
+			font-family: 'RobotoLight'
+			padding-left: 10px
+			font-size: 14px
 	nav
 		ul
 			li
@@ -108,6 +146,166 @@ header
 					line-height: 65px
 					text-align: center
 					font-size: 14px
+	.fixed-nav
+		position: fixed
+		top: -185px
+		left: 0
+		z-index: 1000
+		width: 185px
+		height: 100px
+		font-family: 'RobotoLight'
+		@include transition(top 0.3s)
+		&.active
+			top: 0
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 185px 185px 0 0
+			border-color: $main transparent transparent transparent
+		.side-menu
+			position: relative
+			display: block
+			width: 100%
+			height: 40px
+			padding-top: 12px
+			margin-top: 20px
+			text-align: left
+			position: relative
+			background-color: transparent
+			color: $white
+			text-indent: 40px
+			font-size: 21px
+			z-index: 100
+			@include transition(font-size 0.3s)
+			&.active
+				font-size: 0
+				span
+					&:first-child	
+						&:before
+							top: 0px
+							left: 0px
+							@include transform(rotate(0deg))
+						&:after
+							top: 14px
+							left: -9px
+							@include transform(rotate(60deg))
+					&:last-child						
+						&:before
+							top: 0px
+							left: 0px
+							@include transform(rotate(0deg))
+						&:after
+							top: 14px
+							left: 9px
+							@include transform(rotate(-60deg))
+			span
+				position: absolute
+				top: 0
+				background-color: $white
+				width: 1px
+				height: 20px
+				@include transition(all 0.3s)
+				&:before,&:after
+					position: absolute
+					content: ''
+					background-color: $white
+					width: 1px
+					height: 20px
+					@include transition(all 0.3s)
+				&:first-child
+					left: 21px
+					@include transform(rotate(-30deg))
+					&:before
+						top: -3px
+						left: -5px
+						@include transform(rotate(30deg))
+					&:after
+						top: 12px
+						left: -14px
+						@include transform(rotate(30deg))
+				&:last-child
+					left: 30px
+					@include transform(rotate(30deg))
+					&:before
+						top: -3px
+						left: 5px
+						@include transform(rotate(-30deg))
+					&:after
+						top: 12px
+						left: 14px
+						@include transform(rotate(-30deg))
+
+		>ul
+			position: fixed
+			top: 0
+			left: -185px
+			width: 185px
+			height: 100%
+			padding-top: 100px
+			z-index: 0
+			background-color: $main			
+			@include transition(left 0.3s)
+			&.active
+				left: 0
+			li
+				a
+					padding-left: 15px
+					margin-bottom: 10px
+					display: block
+					text-transform: uppercase
+					color: $white		
+					@include transition(padding 0.3s)
+					&:hover
+						padding-left: 25px
+				&:last-child
+					position: absolute
+					bottom: 0
+					left: 0
+					ul
+						li
+							display: inline-block
+							vertical-align: top
+							a:hover
+								padding-left: 15px
+	.nav-wrap
+		position: relative
+	.lang-switcher
+		position: absolute
+		right: -30px
+		top: 19px
+		border-left: 1px solid $main
+		border-right: 1px solid $main
+		span
+			color: $main
+			cursor: pointer
+			display: block
+			width: 40px
+			padding-left: 5px
+			&:before
+				position: absolute
+				content: '\25be'
+				color: $main
+				right: 4px
+				top: 0
+		ul
+			display: none
+			font-size: 14px
+			background-color: $white
+			li
+				a
+					color: $main
+					display: block
+					padding-left: 5px
+					&:hover
+						color: $black
+
+
+
 
 // Button start------------------------
 .btn
@@ -121,7 +319,7 @@ header
 	min-width: 170px
 	text-align: center
 	font-size: 12px
-	@include border-radius(3px)
+	// @include border-radius(3px)
 	@include transition(all 0.3s)
 	&:hover
 		background-color: $red
