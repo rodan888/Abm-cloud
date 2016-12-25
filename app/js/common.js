@@ -2,7 +2,7 @@ $(function() {
 	var main = {
 		opt: {
 			tabs: $('.tabs'),
-			popup: $('.btn.pop'),
+			popup: $('.btn.pop,.cut-btn.pop'),
 			img: $('img'),
 			linc: $('a'),
 			body: $('body'),
@@ -137,12 +137,12 @@ $(function() {
 
 		main.init();
 
-		$('.video').ripples({
-					resolution: 512,
-					dropRadius: 20, //px
-					perturbance: 0.04,
-					interactive: true
-				});
+		// $('.video').ripples({
+		// 			resolution: 512,
+		// 			dropRadius: 20, //px
+		// 			perturbance: 0.04,
+		// 			interactive: true
+		// 		});
 
 		// try {
 				// $('body').ripples({
