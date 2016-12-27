@@ -137,12 +137,12 @@ $(function() {
 
 		main.init();
 
-		$('.video').ripples({
-					resolution: 512,
-					dropRadius: 20, //px
-					perturbance: 0.04,
-					interactive: true
-				});
+		// $('.video').ripples({
+		// 			resolution: 512,
+		// 			dropRadius: 20, //px
+		// 			perturbance: 0.04,
+		// 			interactive: true
+		// 		});
 
 		// try {
 				// $('body').ripples({
@@ -187,8 +187,9 @@ $(function() {
 		
 
 		setTimeout(function(){
-			$('.loader-wrap').removeClass('active');
-		}, 6000);
+			// $('.loader-wrap').removeClass('active');
+			$('.loader-wrap').fadeOut(600);
+		}, 5000);
 
 		try {
 			$.browserSelector();
