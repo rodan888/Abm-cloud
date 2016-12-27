@@ -2,7 +2,7 @@ $(function() {
 	var main = {
 		opt: {
 			tabs: $('.tabs'),
-			popup: $('.btn.pop'),
+			popup: $('.btn.pop,.cut-btn.pop'),
 			img: $('img'),
 			linc: $('a'),
 			body: $('body'),

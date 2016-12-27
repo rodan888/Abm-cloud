@@ -140,6 +140,32 @@ section.video
 	height: 300px
 	overflow: hidden
 	position: relative
+	&.triangle
+		height: 450px
+		text-align: right		
+		&:after
+			position: absolute
+			content: ''
+			width: 0
+			height: 0
+			top: 0
+			left: 40%
+			border-style: solid
+			border-width: 450px 0 0 450px
+			border-color: transparent transparent transparent $main
+		&:before
+			width: 40%
+			height: 450px
+			background-color: $main
+			opacity: 1
+		img
+			width: 60%
+		.content
+			max-width: 100%
+			text-align: left
+			.btn
+				color: $white
+				border-color: $white
 	&:before
 		position: absolute
 		content: ''
@@ -158,6 +184,7 @@ section.video
 		width: 100%
 		max-width: 600px
 		text-align: center
+		z-index: 100
 		@include transform(translate(-50%,-50%))
 		.text,h1
 			color: $white
@@ -196,6 +223,11 @@ section.video
 	height: 500px
 	position: relative
 	background-image: url("../img/send-bg1.png")
+	&.gradient
+		background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.38) 38%, rgba(0,158,224,1) 100%)
+		background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.38) 38%,rgba(0,158,224,1) 100%)
+		background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.38) 38%,rgba(0,158,224,1) 100%)
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#009ee0',GradientType=0 )
 	form.style
 		width: 600px
 		position: absolute
@@ -283,9 +315,6 @@ section.video
 				padding: 0 5px
 
 
-
-
-
 .popup
 	form
 		min-width: 500px
@@ -307,6 +336,12 @@ section.video
 	text-align: center
 	line-height: 40px
 	z-index: 10
+	&.white
+		color: $white
+		&:before,&:after
+			border-color: $white
+		span
+			background-color: $white	
 	&:hover
 		span
 			bottom: -40px
@@ -340,6 +375,163 @@ section.video
 		opacity: 0
 		background-color: $black
 		@include transition(all 0.5s)
+
+.advantages
+	margin: 70px 0
+	text-align: center
+	.advan-item
+		position: relative
+		min-height: 180px
+		margin-bottom: 40px
+		display: inline-block
+		vertical-align: top
+		width: 32.33%
+		padding: 0 15px
+		&:before
+			position: absolute
+			content: attr( data-index )
+			top: 0
+			left: 0
+			z-index: -1
+			font-size: 240px
+			line-height: 180px
+			color: #f3f3f3
+		&:after
+			position: absolute
+			content: ''
+			left: 0
+			top: 60%
+			width: 100%
+			height: 2px
+			z-index: -1
+			background-color: #f3f3f3
+			@include transform(rotate(-45deg))
+		.icon-block
+			width: 80px
+			height: 80px
+			text-align: center
+			margin: 20px auto
+			i,img
+				font-size: 80px
+				line-height: 80px
+				color: $blackLight
+
+	.text
+		text-align: center
+
+.foto_list
+	text-align: center
+	li
+		display: inline-block
+		width: 300px
+		min-width: 300px
+		height: 300px
+		overflow: hidden
+		margin: 60px 64px
+		position: relative	
+		border: 1px solid $grayLight
+		@include transform(rotate(45deg))
+		&:before
+			position: absolute
+			content: ''
+			width: 100%
+			height: 100%
+			top: 0
+			left: 0
+			z-index: 10
+			background-color: $main
+			background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.38) 38%, rgba(0,158,224,1) 100%)
+			background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.38) 38%,rgba(0,158,224,1) 100%)
+			background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.38) 38%,rgba(0,158,224,1) 100%)
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#009ee0',GradientType=0 )
+		&:nth-child(3n+3)
+			display: block
+			margin: -140px auto
+			margin-top: -148px
+			margin-bottom: -144px
+		&:nth-child(4)
+			margin-top: -250px
+		&:hover
+			button
+				top: 172px
+				left: 143px
+			.more
+				bottom: 47px
+				right: 46px
+	.more
+		position: absolute
+		bottom: 5px
+		right: 5px
+		z-index: 15		
+		font-size: 16px
+		color: $white
+		width: 160px
+		height: 160px
+		padding: 3px
+		padding-top: 10px
+		cursor: default
+		font-family: "RobotoLight"
+		@include transform(rotate(-45deg))
+		@include transition(all 0.5s)
+	img
+		width: 160%
+		height: auto
+		position: absolute
+		top: -93px
+		right: -110px
+		-webkit-transition: all 1.5s
+		-o-transition: all 1.5s
+		transition: all 1.5s
+		cursor: pointer
+		z-index: -1		
+		@include transform(rotate(-45deg))
+	button
+		position: absolute
+		top: 290px
+		left: 260px
+		z-index: 100
+		background-color: transparent				
+		@include transform(rotate(-45deg))
+		@include transition(all 0.3s)
+	a
+		display: block
+		position: relative
+		width: 100%
+		height: 100%
+		z-index: 2
+		&:before
+			position: absolute
+			content: ""
+			top: 0
+			left: 0
+			width: 0%
+			height: 0
+			background-color: rgba(0,0,0, .5)
+			-webkit-transition: all 0.5s
+			-o-transition: all 0.5s
+			@include transition(all 0.5s)
+		&:after
+			content: "+"
+			position: absolute
+			top: 41%; 			
+			left: 50%
+			font-size: 40px			
+			-webkit-transition-delay: 0.3s
+			-o-transition-delay: 0.3s
+			transition-delay: 0.3s
+			color: transparent
+			@include transition(all 0.2s)
+			@include transform(rotate(-45deg))
+		&:hover
+			img
+				top: -130px
+				right: -140px
+			&:before
+				width: 100%
+				height: 100%
+			&:after
+				color: $white
+
 
 
 
