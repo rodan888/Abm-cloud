@@ -137,6 +137,37 @@ $(function() {
 
 		main.init();
 
+		$('#test').on('click', function(){
+			if($(this).hasClass('active')){
+				$('.disc-product .disc-item').css('width','400px');				
+				$(this).removeClass('active');
+			}else{
+				$(this).addClass('active');
+				$('.disc-product .disc-item').css('width','0px');				
+			};
+		});
+
+		$('.disc-product .disc-item').on('click', function(){			
+			var	that	 = $(this);
+			 	deg 	   = $(this).data('deg'),
+			 	ind      = $(this).data('index'),
+				products = $('.product-wrap .product-item'),				
+				addClass = function(){
+					that.addClass('active');
+
+					products.eq(ind-1).addClass('active');
+				};
+
+			deg+=90;
+			products.removeClass('active');
+			$('.disc-product .disc-item').removeClass('active');
+
+			$('.disc-product').css({
+				'transform': 'rotate('+ deg +'deg)'
+			});
+			setTimeout(addClass,1000);
+		});
+
 		// $('.video').ripples({
 		// 			resolution: 512,
 		// 			dropRadius: 20, //px

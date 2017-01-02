@@ -198,25 +198,25 @@ section.video
 	.col-md-6
 		position: relative
 		min-height: 400px	
-		.descr-block
-			position: absolute
-			top: 50%
-			left: 15px
-			@include transform(translateY(-50%))
-			h1
-				font-size: 42px
-			p
-				max-width: 380px
-				margin-bottom: 20px
-		.img-block
-			position: absolute
-			top: 50%
-			left: 0
-			width: 100%
-			text-align: right
-			@include transform(translateY(-50%))
-			img
-				max-width: 500px
+.descr-block
+	position: absolute
+	top: 50%
+	left: 15px
+	@include transform(translateY(-50%))
+	h1
+		font-size: 42px
+	p
+		max-width: 380px
+		margin-bottom: 20px
+.img-block
+	position: absolute
+	top: 50%
+	left: 0
+	width: 100%
+	text-align: right
+	@include transform(translateY(-50%))
+	img
+		max-width: 500px
 
 .send-section
 	height: 500px
@@ -532,6 +532,152 @@ section.video
 				color: $white
 
 
+section.main-triangle
+	min-height: 450px
+	padding: 20px 0
+	position: relative
+	&:before
+		position: absolute
+		content: ''
+		bottom: -160px
+		left: 0	
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 160px 1920px 0 0
+		border-color: $white transparent transparent transparent
+	.col-md-6
+		position: relative
+		min-height: 450px
+	img
+		width: 100%
+
+.animation-arrow
+	position: absolute
+	height: 40px
+	width: 40px
+	bottom: -30px
+	left: 50%
+	margin-left: -20px
+	z-index: 1000
+	cursor: pointer	
+	.arrow-anim
+		opacity: 0
+		position: absolute
+		left: 50%
+		top: 50%	
+		&:before,&:after
+			background: $main
+			content: ''
+			display: block
+			height: 3px;
+			position: absolute
+			top: 0
+			left: 0
+			width: 30px
+		&:before
+			transform-origin: top left;
+			@include transform(rotate(45deg) translateX(-23%))
+		&:after
+			transform-origin: top right;	
+			@include transform(rotate(-45deg) translateX(23%))
+
+	.arrow-1
+		animation: arrow-movement 1s ease-in-out infinite
+	.arrow-2
+		animation: arrow-movement 1s 0.5s ease-in-out infinite
+
+@keyframes arrow-movement
+	0%
+		opacity: 0
+	70%
+		opacity: 1
+	100% 
+		opacity: 0
+		top: 95%
+
+
+section.advan
+	min-height: 600px
+	background-color: #fafdff
+	background-image: url("../img/grid.png")
+	background-repeat: repeat
+	padding-top: 190px
+	padding-bottom: 1px
+	.percent-info
+		position: relative
+		z-index: 10
+		max-width: 800px
+		margin: 0 auto 65px
+		&:after
+			position: absolute
+			content: ''
+			width: 50%
+			height: 170px
+			left: 50%	
+			bottom: 0
+			border-bottom: 3px dashed $blackLight
+			border-right: 3px dashed $blackLight
+		&:nth-child(even)		
+			&:after
+				left: 0
+				border-right: none
+				border-left: 3px dashed $blackLight
+		&:nth-child(odd)		
+			.col-md-6:last-child
+				text-align: right
+		.percent
+			color: $blackLight
+			font-size: 160px
+			position: relative
+			&:before
+				position: absolute
+				content: '%'
+				left: 175px
+				top: -10px
+				z-index: -1
+				font-size: 190px
+				line-height: 190px
+				color: $blackLight
+		img
+			width: 100%
+			max-width: 300px
+
+.extend-form
+	padding: 30px 0
+	.phone-list
+		min-height: 356px
+		position: relative
+		&:before
+			position: absolute
+			content: ''
+			right: 0
+			top: 0
+			height: 100%
+			width: 0
+			border-left: 1px dashed $main
+		ul
+			li
+				a
+					display: block
+					margin-bottom: 10px
+		.more
+			position: absolute
+			top: 50%
+			right: -50px
+			width: 100px
+			height: 100px
+			margin-top: -50px
+			line-height: 63px
+			color: $white
+			background-color: $main
+			border:  20px solid $white
+			display: block
+			font-size: 14px
+			@include border-radius(50%)
+	img
+		display: block
+		margin: 30px auto
 
 
 footer 
@@ -575,3 +721,107 @@ footer
 //ALWAYS END
 @import "_preloader.sass"
 @import "media"
+
+.presentation
+	background: rgb(0,158,224)
+	background: -moz-linear-gradient(left,  rgba(0,158,224,1) 24%, rgba(255,255,255,1) 100%)
+	background: -webkit-linear-gradient(left,  rgba(0,158,224,1) 24%,rgba(255,255,255,1) 100%)
+	background: linear-gradient(to right,  rgba(0,158,224,1) 24%,rgba(255,255,255,1) 100%)
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009ee0', endColorstr='#ffffff',GradientType=1 )
+
+
+.disc-product
+	min-height: 700px
+	// background-image: url("../img/discBgCloud.png")
+	background-repeat: no-repeat
+	background-position: top left
+	position: relative
+
+	width: 805px	
+	@include transform(rotate(90deg))
+	@include transition(all 1.0s)
+	.disc-item
+		position: absolute
+		// top: 0
+		// left: 100px
+
+		// z-index: -1
+		// width: 400px
+		width: 0px
+		height: 0px
+		background-color: $white
+		@include transition(all 1.3s)
+		&.active
+			// left: initial!important
+			// right: -100%
+			// top: 0!important
+			// width: 100%
+			// height: 100%
+			// &:nth-child(3)
+				// @include transition(all 1.3s)
+			&:before
+				border-width: 890px 310px 0
+				bottom: -73px
+				left: -183px
+		// &:hover:before
+			// border-color: $red transparent transparent transparent
+		&:after
+			position: absolute
+			content: attr( data-index )
+			color: $blackLight
+			font-size: 40px
+			top: 100px
+			left: 116px
+		&:before
+			position: absolute
+			content: ''
+			left: 0
+			bottom: -315px
+			border-style: solid
+			border-width: 315px 130px 0 130px
+			border-color: $white transparent transparent transparent
+			@include transition(all 0.3s)
+		&:nth-child(1)			
+			top: 30px
+			left: 260px
+		&:nth-child(2)			
+			left: 530px
+			top: 40px
+			@include transform(rotate(45deg))
+		&:nth-child(3)
+			left: 720px
+			top: 235px
+			@include transform(rotate(90deg))			
+		&:nth-child(4)
+			left: 713px
+			bottom: 195px
+			@include transform(rotate(135deg))
+		&:nth-child(5)
+			left: 521px
+			bottom: 0
+			@include transform(rotate(180deg))
+		&:nth-child(6)
+			left: 253px
+			bottom: 10px
+			@include transform(rotate(225deg))
+		&:nth-child(7)
+			left: 62px
+			bottom: 206px
+			@include transform(rotate(270deg))
+		&:nth-child(8)
+			left: 65px
+			top: 220px
+			@include transform(rotate(315deg))
+
+.product-wrap
+	height: 700px
+	position: relative
+	overflow: hidden
+	.product-item
+		opacity: 0
+		position: absolute
+		bottom: -100px
+		@include transition(all 0.5s)		
+		&.active
+			opacity: 1
+			bottom: 50%
