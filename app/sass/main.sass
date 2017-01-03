@@ -19,7 +19,6 @@
 //Custom Styles Here
 
 .slider
-	margin-top: 40px
 	.item
 		img
 			width: 100%
@@ -798,7 +797,7 @@ footer
 			@include transform(rotate(135deg))
 		&:nth-child(5)
 			left: 519px
-			bottom: 4
+			bottom: 4px
 			@include transform(rotate(180deg))
 		&:nth-child(6)
 			left: 247px
@@ -825,3 +824,105 @@ footer
 		&.active
 			opacity: 1
 			bottom: 50%
+
+.comment-wrap
+	.comment-item
+		height: 420px
+		.user-photo
+			margin: 60px 0
+			width: 300px
+			height: 300px
+			overflow: hidden
+			border-left: 10px solid $main
+			@include border-radius(50%)
+			img
+				height: 100%
+				width: auto
+		.comment-content	
+			min-height: 420px
+			position: relative
+			p
+				position: absolute
+				top: 50%
+				left: 0
+				width: 100%
+				padding: 0 40px
+				font-style: italic
+				@include transform(translateY(-50%))
+				&:before,
+				&:after
+					position: absolute					
+					font-family: 'FontAwesome'
+					color: $blackLight				
+					font-size: 26px
+				&:before
+					content: '\f10e'
+					top: 0
+					left: 0
+				&:after
+					content: '\f10d'
+					bottom: 0
+					right: 0
+.slider
+	.owl-next,.owl-prev
+		font-size: 44px!important
+		color: $main!important
+		background-color: transparent!important
+	.owl-controls
+		margin-top: -25px!important
+		.owl-page
+			span
+				background-color: $main!important
+				width: 8px!important
+				height: 8px!important
+				margin: 2px 5px!important
+
+.blog-grid
+	background-color: $blackLight
+	width: 65%
+	overflow: hidden
+	&:nth-child(1),
+	&:nth-child(3),
+	&:nth-child(5),
+	&:nth-child(6)
+		width: 33%
+		height: 203px
+	&:nth-child(2),
+	&:nth-child(4)
+		height: 417px
+	.site-descr
+		position: absolute
+		width: 100%
+		height: 100%
+		background-color: rgba(255,255,255, .8)
+		.descr-wrap
+			position: absolute
+			top: 50%
+			left: 50%
+			width: 90%
+			max-width: 400px
+			@include transform(translate(-50%,-50%))
+			h3,p
+				text-align: center
+			span
+				font-size: 12px
+				margin-bottom: 10px
+				display: block
+			.read-more
+				display: block
+				margin: 10px auto 0
+				font-size: 16px				
+				width: 35px
+				height: 35px
+				line-height: 35px
+				border: 1px solid
+				-webkit-border-radius: 50%
+				border-radius: 50%
+				background-color: $blackLight
+				color: $white
+				border-color: $blackLight 
+				@include transition(padding 0.3s)
+				&:hover
+					padding-left: 10px
+
+

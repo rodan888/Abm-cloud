@@ -137,6 +137,10 @@ $(function() {
 
 		main.init();
 
+		var grid = $('.grid');
+      	grid.packery();
+      	grid.find('.blog-grid').hoverdir({hoverElem:'.site-descr'});	
+
 		$('#test').on('click', function(){
 			if($(this).hasClass('active')){
 				$('.disc-product .disc-item').css('width','400px');				
