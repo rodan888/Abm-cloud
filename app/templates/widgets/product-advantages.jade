@@ -1,0 +1,38 @@
+section.advantages
+	div.content
+		div.container
+			div.row
+				div.col-md-12
+					-
+						var advanList = [
+							{
+								img: "img/advan1.png",
+								title: "Perfect product for yuo!"
+							},
+							{
+								img: "img/advan2.png",
+								title: "Perfect product for yuo!"
+							},
+							{
+								img: "img/advan3.png",
+								title: "Perfect product for yuo!"
+							},
+							{
+								img: "img/advan1.png",
+								title: "Perfect product for yuo!"
+							},
+							{
+								img: "img/advan2.png",
+								title: "Perfect product for yuo!"
+							}
+						];
+					for advan, index in advanList
+						div.advantages-wrap
+							div.img-wraper
+								img(src=advan.img alt="alt")
+							div.content-wrap(data-index="0"+(1+index))
+								h3.title-defoult.mb2= advan.title
+								p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores saepe quidem rem distinctio hic sequi mollitia ex, neque veritatis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse illo accusantium quae excepturi minima sed, quasi distinctio asperiores laboriosam temporibus.
+								a.cut-btn.mt2(href="content-page.html")
+									span
+									| button name

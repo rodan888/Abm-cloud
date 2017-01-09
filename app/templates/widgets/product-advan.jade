@@ -1,0 +1,40 @@
+section.advan
+	-
+		var advanList = [
+			{
+				percent: 72,
+				img: "img/brain.png",
+				text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate cum molestiae iste nemo, quod explicabo quis modi necessitatibus eveniet sapiente numquam facilis autem cumque consequuntur nihil itaque tempora repudiandae voluptas deserunt, omnis laudantium fugit perspiciatis nam nisi eum?"
+			},
+			{
+				percent: 84,
+				img: "img/chart-icon.png",
+				text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate cum molestiae iste nemo, quod explicabo quis modi necessitatibus eveniet sapiente numquam facilis autem cumque consequuntur nihil itaque tempora repudiandae voluptas deserunt, omnis laudantium fugit perspiciatis nam nisi eum?"
+			},
+			{
+				percent: 99,
+				img: "img/mon-icon.png",
+				text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate cum molestiae iste nemo, quod explicabo quis modi necessitatibus eveniet sapiente numquam facilis autem cumque consequuntur nihil itaque tempora repudiandae voluptas deserunt, omnis laudantium fugit perspiciatis nam nisi eum?"
+			},
+			{
+				percent: 64,
+				img: "img/users-icon.png",
+				text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate cum molestiae iste nemo, quod explicabo quis modi necessitatibus eveniet sapiente numquam facilis autem cumque consequuntur nihil itaque tempora repudiandae voluptas deserunt, omnis laudantium fugit perspiciatis nam nisi eum?"
+			}
+		];
+	for advan, index in advanList
+		div.percent-info
+			div.container-fluid
+				div.row
+					if index%2 === 0
+						div.col-md-6
+							span.percent= advan.percent
+							p.text= advan.text
+						div.col-md-6
+							img(src=advan.img alt="alt")
+					else
+						div.col-md-6
+							img(src=advan.img alt="alt")
+						div.col-md-6
+							span.percent= advan.percent
+							p.text= advan.text

@@ -1,0 +1,57 @@
+section.foto_wrap
+	div.container
+		div.row
+			div.col-md-12
+				ul.foto_list.img_wrap
+					-
+						var teamList = [
+							{
+								name: "Ирина фомина",
+								place: "Менеджер",
+								image: "img/girl.png"
+							},
+							{
+								name: "Ирина фомина",
+								place: "Менеджер",
+								image: "img/seampl1.jpg"
+							},
+							{
+								name: "Ирина фомина",
+								place: "Менеджер",
+								image: "img/seampl2.jpg"
+							},
+							{
+								name: "Ирина фомина",
+								place: "Менеджер",
+								image: "img/seampl3.jpg"
+							},
+							{
+								name: "Ирина фомина",
+								place: "Менеджер",
+								image: "img/seampl.jpg"
+							},
+							{
+								name: "Ирина фомина",
+								place: "Менеджер",
+								image: "img/girl.png"
+							},
+							{
+								name: "Ирина фомина",
+								place: "Менеджер",
+								image: "img/seampl1.jpg"
+							},
+							{
+								name: "Ирина фомина",
+								place: "Менеджер",
+								image: "img/seampl2.jpg"
+							}
+						];
+					for player, index in  teamList
+						li
+							div(class="more")= player.name
+								hr
+								| Менеджер
+							img(src=player.image alt=player.name)
+							button.cut-btn.white.pop.mt2(data-show="popup-an")
+								span
+								| Написать

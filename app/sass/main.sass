@@ -17,8 +17,29 @@
 	vertical-align: top
 
 //Custom Styles Here
+.bread
+	margin: 20px 0
+	li
+		display: inline-block
+		vertical-align: top
+		line-height: 30px
+		margin-right: 20px
+		color: $blackLight
+		font-size: 13px
+		a,a:after
+			line-height: 30px
+			color: $main
+		a
+			display: block
+			position: relative
+			&:hover
+				text-decoration: underline
+			&:after
+				position: absolute
+				content: '/'
+				right: -14px		
 
-.slider
+.slider-custom
 	.item
 		img
 			width: 100%
@@ -31,52 +52,107 @@
 			margin-top: -20px
 			.owl-prev
 				position: absolute
-				left: 0
+				left: -75px
 				top: 0
 			.owl-next
 				position: absolute
-				right: 0
+				right: -75px
 				top: 0
+.carousel
+	.item
+		text-align: center
+		height: 350px
+		position: relative
+		@include transition(background 0.3s)
+		&:hover
+			background-color: $grayLight
+		img
+			width: 150px
+			position: absolute
+			top: 50%
+			left: 50%
+			margin-left: -75px
+			@include transform(translateY(-50%))
 
 section.video
 	position: relative
-	height: 619px
-	overflow: hidden
-	.descr-block
-		position: absolute
-		top: 50%
-		left: 0
-		@include transform(translateY(-50%))
-	.col-md-6
-		position: relative
-		height: 550px
 	&:before
 		position: absolute
 		content: ''
 		top: 0
-		left: 0
-		width: 100%
+		left: 26%
+		width: 1px
 		height: 100%
-		opacity: .8
-		background-color: $white
-		background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 35%, rgba(255,255,255,1) 43%, rgba(255,255,255,0) 100%)
-		background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,1) 35%,rgba(255,255,255,1) 43%,rgba(255,255,255,0) 100%)
-		background: linear-gradient(135deg,  rgba(255,255,255,1) 35%,rgba(255,255,255,1) 43%,rgba(255,255,255,0) 100%)
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 )
-
-	video
-		width: 100%
-		position: absolute
-		top: 0
-		left: 0
-		z-index: -1
-	.content
-		position: absolute
-		width: 100%
-		height: 100%
-		top: 0
-		left: 0
-		background-color: rgba(255,255,255, .7)
+		z-index: 10
+		background-color: $main
+	// &:after
+	// 	position: absolute
+	// 	content: ''
+	// 	top: 0
+	// 	left: 0
+	// 	width: 100%
+	.video-wrap
+		position: relative
+		height: 619px
+		overflow: hidden
+		.descr-block
+			position: absolute
+			top: 37%
+			left: 220px
+			padding-bottom: 30px
+			z-index: 100
+			background-color: $white
+			@include transform(translateY(-50%))
+		.col-md-6
+			position: relative
+			height: 550px
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			opacity: .8
+			background-color: $white
+			background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 35%, rgba(255,255,255,1) 43%, rgba(255,255,255,0) 100%)
+			background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,1) 35%,rgba(255,255,255,1) 43%,rgba(255,255,255,0) 100%)
+			background: linear-gradient(135deg,  rgba(255,255,255,1) 35%,rgba(255,255,255,1) 43%,rgba(255,255,255,0) 100%)
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 )
+		.hills-wrap
+			position: absolute
+			top: 0
+			left: 0
+			background-color: $white
+			height: 620px
+			width: 47%
+			&:after    
+				position: absolute
+				content: ''
+				width: 0
+				height: 0
+				left: 99.5%
+				border-style: solid
+				border-width: 620px 0 0 620px
+				border-color: transparent transparent transparent $white
+			img.hills
+				position: absolute
+				top: 0
+				left: 0
+				z-index: 100
+		video
+			width: 100%
+			position: absolute
+			top: 0
+			left: 0
+			z-index: -1
+		.content
+			position: absolute
+			width: 100%
+			height: 100%
+			top: 0
+			left: 0
+			background-color: rgba(255,255,255, .7)
 
 .advantages
 	.advantages-wrap
@@ -220,7 +296,9 @@ section.video
 .send-section
 	height: 500px
 	position: relative
-	background-image: url("../img/send-bg1.png")
+	background-image: url("../img/hill-svg1.png")
+	background-repeat: no-repeat
+	background-position: bottom right
 	&.gradient
 		background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.38) 38%, rgba(0,158,224,1) 100%)
 		background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.38) 38%,rgba(0,158,224,1) 100%)
@@ -511,7 +589,7 @@ section.video
 		&:after
 			content: "+"
 			position: absolute
-			top: 41%; 			
+			top: 41% 			
 			left: 50%
 			font-size: 40px			
 			-webkit-transition-delay: 0.3s
@@ -545,11 +623,44 @@ section.main-triangle
 		border-style: solid
 		border-width: 160px 1920px 0 0
 		border-color: $white transparent transparent transparent
+	&.product
+		background-color: #2abdfb
+		&:before
+			border-color: #2abdfb transparent transparent transparent
+		h1,.text
+			color: $white
+		.btn
+			color: $white
+			border-color: $white
 	.col-md-6
 		position: relative
 		min-height: 450px
 	img
 		width: 100%
+	.descr-block
+		z-index: 1
+	.video-wrap
+		position: relative
+		min-height: 445px
+		padding-top: 22px
+		z-index: 1
+		@include border-radius(17px)
+		img
+			position: absolute
+			top: 0
+			left: 0
+			z-index: -1
+		iframe
+			width: 505px!important
+			height: 290px!important
+			display: block
+			margin: 0 auto
+	.hills
+		position: absolute
+		bottom: -130px
+		right: 0
+		width: auto
+		@include transform(rotate(-4.8deg))
 
 .animation-arrow
 	position: absolute
@@ -566,19 +677,19 @@ section.main-triangle
 		left: 50%
 		top: 50%	
 		&:before,&:after
-			background: $main
+			background: $white
 			content: ''
 			display: block
-			height: 3px;
+			height: 3px
 			position: absolute
 			top: 0
 			left: 0
 			width: 30px
 		&:before
-			transform-origin: top left;
+			transform-origin: top left
 			@include transform(rotate(45deg) translateX(-23%))
 		&:after
-			transform-origin: top right;	
+			transform-origin: top right	
 			@include transform(rotate(-45deg) translateX(23%))
 
 	.arrow-1
@@ -616,7 +727,7 @@ section.advan
 			left: 50%	
 			bottom: 0
 			border-bottom: 3px dashed $blackLight
-			border-right: 3px dashed $blackLight
+			border-right: 3px dashed $blackLight	
 		&:nth-child(even)		
 			&:after
 				left: 0
@@ -640,7 +751,7 @@ section.advan
 				color: $blackLight
 		img
 			width: 100%
-			max-width: 300px
+			max-width: 300px	
 
 .extend-form
 	padding: 30px 0
@@ -717,21 +828,32 @@ footer
 				display: block
 
 
-//ALWAYS END
-@import "_preloader.sass"
-@import "media"
-
 .presentation
-	background: rgb(0,158,224)
-	background: -moz-linear-gradient(left,  rgba(0,158,224,1) 24%, rgba(255,255,255,1) 100%)
-	background: -webkit-linear-gradient(left,  rgba(0,158,224,1) 24%,rgba(255,255,255,1) 100%)
-	background: linear-gradient(to right,  rgba(0,158,224,1) 24%,rgba(255,255,255,1) 100%)
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009ee0', endColorstr='#ffffff',GradientType=1 )
+	background-image: url(../img/grid.png)
+	// background: rgb(0,158,224)
+	// background: -moz-linear-gradient(left,  rgba(0,158,224,1) 24%, rgba(255,255,255,1) 100%)
+	// background: -webkit-linear-gradient(left,  rgba(0,158,224,1) 24%,rgba(255,255,255,1) 100%)
+	// background: linear-gradient(to right,  rgba(0,158,224,1) 24%,rgba(255,255,255,1) 100%)
+	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009ee0', endColorstr='#ffffff',GradientType=1 )
 
-
+	.cloud-presentation
+		position: relative
+		&:before
+			position: absolute
+			content: ''
+			top: 53%
+			left: 43.5%
+			width: 250px
+			height: 250px
+			background-image: url("../img/claud1.png")
+			background-size: 100%
+			background-repeat: no-repeat
+			z-index: 100
+			@include transform(rotate(-90deg))
+			@include transform(translate(-50%,-50%))
+		
 .disc-product
 	min-height: 700px
-	// background-image: url("../img/discBgCloud.png")
 	background-repeat: no-repeat
 	background-position: top left
 	position: relative
@@ -743,20 +865,33 @@ footer
 		width: 0px
 		height: 0px
 		cursor: pointer
-		background-color: $white
+		background-color: $main
 		@include transition(all 1.3s)
+		p
+			position: absolute
+			font-size: 13px
+			color: $white
+			width: 175px
+			left: 45px
+			top: 10px
+			text-align: center
+			.cut-btn			
+				line-height: 30px
+				&:before,&:after
+					height: 30px
+
 		&.active			
 			&:before
 				border-width: 790px 360px 0
 				bottom: -85px
 				left: -233px	
-		&:after
-			position: absolute
-			content: attr( data-index )
-			color: $blackLight
-			font-size: 40px
-			top: 100px
-			left: 116px
+		// &:after
+		// 	position: absolute
+		// 	content: attr( data-index )
+		// 	color: $white
+		// 	font-size: 40px
+		// 	top: 100px
+		// 	left: 116px
 		&:before
 			position: absolute
 			content: ''
@@ -764,7 +899,7 @@ footer
 			bottom: -315px
 			border-style: solid
 			border-width: 315px 130px 0 130px
-			border-color: $white transparent transparent transparent
+			border-color: $main transparent transparent transparent
 			@include transition(all 0.3s)
 		&:nth-child(1)			
 			top: 33px
@@ -815,7 +950,7 @@ footer
 		&:before
 			position: absolute
 			content: attr( data-index )
-			color: $main
+			color: $white
 			top: -55px
 			right: -20px
 			font-size: 350px
@@ -830,13 +965,14 @@ footer
 			height: auto
 		p
 			position: absolute
-			left: 0
+			left: 20px
 			top: 48%
-			width: 280px
+			width: 350px
 			text-align: center
+			color: $white			
 			@include transform(translateY(-50%))
 			a
-				color: $black
+				color: $white
 				&:hover
 					text-decoration: underline
 
@@ -877,10 +1013,11 @@ footer
 				&:after
 					content: '\f10d'
 					bottom: 0
-					right: 0
-.slider
+					right: 40px
+.slider-custom
 	.owl-next,.owl-prev
 		font-size: 44px!important
+		line-height: 30px
 		color: $main!important
 		background-color: transparent!important
 	.owl-controls
@@ -941,3 +1078,237 @@ footer
 					padding-left: 10px
 
 
+#content 
+	padding-top: 20px
+	.cont-wrap 
+		max-width: 870px
+		margin: 0 auto 40px
+		.info-block 
+			border-bottom: 1px solid $gray
+			padding-bottom: 20px
+			span 
+				margin-right: 5px
+				background-color: $main
+				padding: 3px 5px
+				border-radius: 4px
+				color: $white
+	.content 
+		padding: 30px 0
+		img 
+			max-width: 300px
+			height: auto
+			float: left
+			margin: 10px 10px 10px 0
+		p 
+			margin-bottom: 10px
+			clear: both
+		blockquote 
+			font-style: italic
+			padding: 10px 20px
+			border-bottom: 1px solid #ccc
+			position: relative
+			&:after,&:before 
+				position: absolute
+				content: "\""
+				font-size: 30px
+				height: 20px
+				line-height: 35px
+			&:before 
+				top: 0
+				left: -5px
+			&:after 
+				bottom: 0
+				right: -5px
+
+.diagonal-gradient
+	.cont-wrap
+		min-height: 550px
+		position: relative
+		&:before
+			position: absolute
+			content: ''
+			bottom: -45px
+			z-index: 10
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 60px 45px 0 45px
+			border-color: $white transparent transparent transparent
+		&:nth-child(odd)
+			background: -moz-linear-gradient(-45deg,  rgba(28,167,221,1) 0%, rgba(255,255,255,1) 56%)
+			background: -webkit-linear-gradient(-45deg,  rgba(28,167,221,1) 0%,rgba(255,255,255,1) 56%)
+			background: linear-gradient(135deg,  rgba(28,167,221,1) 0%,rgba(255,255,255,1) 56%)
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ca7dd', endColorstr='#ffffff',GradientType=1 )
+			&:before
+				right: 70px
+			img
+				left: 0
+		&:nth-child(even)
+			background: rgb(255,255,255)
+			background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 56%, rgba(28,167,221,1) 100%)
+			background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,1) 56%,rgba(28,167,221,1) 100%)
+			background: linear-gradient(135deg,  rgba(255,255,255,1) 56%,rgba(28,167,221,1) 100%)
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#1ca7dd',GradientType=1 )
+			img
+				right: 0
+			&:before
+				left: 70px
+		&:last-child:before
+			display: none
+		.col-sm-6
+			min-height: 550px
+			position: relative
+			img
+				position: absolute
+				top: 50%				
+				max-width: 400px
+				@include transform(translateY(-50%))
+			.content
+				position: absolute
+				top: 50%
+				left: 0
+				@include transform(translateY(-50%))
+				ul
+					margin-left: 20px
+					li
+						position: relative
+						padding-left: 26px
+						margin-bottom: 15px
+						&:before
+							position: absolute
+							content: ''
+							top: 6px
+							left: 0
+							width: 15px
+							height: 15px
+							background-color: $main
+							opacity: 0.6
+							@include border-radius(50%)
+						&:after
+							position: absolute
+							content: ''
+							top: 9px
+							left: 3px
+							width: 9px
+							height: 9px
+							background-color: $white
+							opacity: 0.6
+							box-shadow: 1px 1px 3px $black
+							@include border-radius(50%)
+
+.top-triangle
+	background-color: #2abdfb
+	background-image: url("../img/content-page-bg.png")
+	background-repeat: no-repeat
+	background-attachment: fixed
+	background-size: 100%
+	.content
+		position: relative
+		min-height: 250px
+		max-width: 870px
+		margin: 0 auto
+		background-image: url("../img/content-page-bg1.png")
+		background-repeat: no-repeat
+		background-position: bottom left
+		background-size: 87%
+		h1
+			position: absolute
+			top: 50%
+			left: 0
+			color: $white
+			font-size: 40px
+			@include transform(translateY(-50%))
+
+.share-block
+	border-bottom: 1px solid $gray
+	padding-bottom: 10px
+	margin-top: 30px
+	.label
+		margin-right: 10px
+		display: inline-block
+		color: $black
+	button,a
+		vertical-align: middle
+		text-align: center
+		display: inline-block
+		padding: 0
+		margin-right: 5px
+		background-color: transparent
+		i
+			font-size: 20px
+			color: $black
+			width: 35px
+			height: 35px
+			line-height: 35px
+			border: 1px solid $black
+			@include border-radius(50%)
+			@include transition(all 0.3s)
+		&:hover i
+			background-color: $blackLight
+			color: $white
+			border-color: $blackLight 
+
+.tabs-wrap
+	padding: 70px 0 50px
+	position: relative
+	&:before
+		position: absolute
+		content: ''
+		top: 0
+		left: 26%
+		width: 1px
+		height: 100%
+		z-index: 10
+		background-color: $main
+	.tabs
+		background-color: $white
+		position: relative
+		z-index: 100
+		margin-top: 40px
+		margin-left: 125px
+		padding: 20px 0
+		li
+			margin-bottom: 5px
+			&:first-child
+				button
+					border-top: 1px solid #ebebeb			
+			button
+				position: relative
+				background-color: transparent
+				display: block
+				width: 100%
+				font-size: 16px
+				padding: 10px 20px
+				border-bottom: 1px solid #ebebeb
+				@include transition(padding 0.3s)
+				&:hover
+					padding-left: 35px
+				&.active
+					&:before
+						position: absolute
+						content: ''
+						top: 50%					
+						right: -25%
+						width: 50%
+						height: 1px
+						background-color: $main
+	.contentent-wrap
+		img.monitor
+			width: 600px
+		.content-item
+			position: absolute
+			top: 10px
+			right: 20px
+			width: 590px
+			overflow: hidden
+			z-index: -1
+			height: 375px
+			img
+				width: 0%
+				@include transition(width 0.6s)
+				&.active
+					width: 100%
+
+//ALWAYS END
+@import "_preloader.sass"
+@import "_media"

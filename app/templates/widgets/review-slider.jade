@@ -1,0 +1,17 @@
+section
+	div.container
+		div.row
+			div.col-md-12
+				h2.title-section.mb2.mt3 Отзывы наших клиентов
+				div.slider.slider-custom.comment-wrap
+					-
+						var slideList = ['img/girl.png','img/seampl1.jpg','img/seampl2.jpg']
+					for slide in slideList
+						div.item.comment-item
+							div.container
+								div.row
+									div.col-sm-6
+										div.user-photo
+											img(src= slide alt="alt")
+									div.col-sm-6.comment-content
+										p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores tempora nemo, sed reiciendis, assumenda placeat nesciunt laudantium itaque temporibus doloribus ipsam expedita at voluptates labore, a quos eius eligendi nostrum. Est dignissimos officia accusantium aliquid ullam earum, rem facilis labore.

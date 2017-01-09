@@ -1,0 +1,37 @@
+section.extend-form
+	div.container
+		div.row
+			div.col-md-6
+				div.phone-list.center
+					img(src="img/logo.png" class="mt3" alt="abm-cloud")
+					ul
+						li
+							a(href="tel://+380 (44) 207-39-55") +380 (44) 207-39-55
+						li
+							a(href="tel://+380 (44) 207-39-55") +380 (44) 207-39-55
+						li
+							a(href="tel://+380 (44) 207-39-55") +380 (44) 207-39-55
+					span.more или
+			div.col-md-6.contacts
+				form.mt3
+					div.container-fluid
+						div.row
+							div.col-md-4.clrp
+								div.form-group
+									label(for="name") Имя
+									input(type="text" name="name" id="name" placeholder="Nick")
+							div.col-md-4.clrp
+								div.form-group
+									label(for="email") E-mail
+									input(type="email" name="email" id="email" required placeholder="nick@gmail.com")
+							div.col-md-4.clrp
+								div.form-group
+									label(for="place") Должность
+									input(type="text" name="place" id="place" required placeholder="Manager")
+					div.form-group.mt2.textarea-block
+						label(for="fancy-textarea") Сообщение
+						textarea(name="fancy-textarea" id="fancy-textarea" placeholder="Ваше сообщение")
+						button(type="submit" class="btn full") Отправить
+					input(type="hidden" name="project_name" value="Имя сайта")
+					input(type="hidden" name="admin_email" value="tsumbaluk888@gmail.com")
+					input(type="hidden" name="form_subject" value="Заявка с имя сайта")

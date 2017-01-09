@@ -11,18 +11,22 @@ $(function() {
 			menu: $('.fixed-nav'),
 			mobButton: $('.mob-button'),
 			slider: $('.slider'),
-			owlOptions: {
-				autoPlay: 3000,
-				navigation: true,
-				singleItem: true,
-				autoPlay: false,	
-				pagination: true,
-				scrollPerPage: true,
-				navigationText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>']								
+			carousel: $('.carousel'),
+			owlOptions: function(item){
+				return {
+					autoPlay: 3000,
+					navigation: true,
+					singleItem: item,
+					items: item == true ? 1 : 5,
+					autoPlay: false,	
+					pagination: true,
+					scrollPerPage: true,
+					navigationText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>']								
+				}
 			}
 		},
 		menuAnim: function(){
-			$('button.side-menu').on('click', function(){
+			$('button.side-menu, .mob-button').on('click', function(){
 				$(this).toggleClass('active').next().toggleClass('active');
 			});
 		},
@@ -106,9 +110,10 @@ $(function() {
 			// Add el window height
 			this.fullHeight(this.opt.body);
 			//owl slider init
-			this.opt.slider.owlCarousel(this.opt.owlOptions);
+			this.opt.slider.owlCarousel(new this.opt.owlOptions(true));
+			this.opt.carousel.owlCarousel(new this.opt.owlOptions(false));
 			//mob button toggle
-			this.toggleC(this.opt.mobButton);
+			//this.toggleC(this.opt.mobButton);
 
 			this.scrollEvents();
 			this.menuAnim();
@@ -137,19 +142,52 @@ $(function() {
 
 		main.init();
 
+		function tabs(){
+			$('.tabs button').on('click', function(){
+				var ind = $(this).data('index');
+				$('.tabs button').removeClass('active');
+				$('.content-item img').removeClass('active');
+				$(this).addClass('active');
+				$('.content-item img').eq(ind).addClass('active');
+			});
+		};
+		tabs();
+
+		function logoAnim(){			
+			var logo = $('.hills');
+			var width = $(window).width();
+			var height = $('header').height();
+
+			$('.video').mousemove(function(e) {		
+				var xPos = e.pageX;
+				var yPos = e.pageY;
+
+				var xPos = xPos - (Math.floor(width/2));
+				var yPos = yPos - (Math.floor(height/2));
+
+				logo.css({
+					//'-webkit-transform': 'rotateY('+ xPos/20 +'deg) rotateX('+ (-yPos/20) +'deg)',
+					//'transform': 'rotateY('+ xPos/20 +'deg) rotateX('+ (-yPos/20) +'deg)'
+					'transform': 'translate('+ yPos/20 +'px, '+ xPos/20 +'px)'
+				});		
+			});
+		};
+		//logoAnim();
+
+
 		var grid = $('.grid');
       	grid.packery();
       	grid.find('.blog-grid').hoverdir({hoverElem:'.site-descr'});	
 
-		$('#test').on('click', function(){
-			if($(this).hasClass('active')){
-				$('.disc-product .disc-item').css('width','400px');				
-				$(this).removeClass('active');
-			}else{
-				$(this).addClass('active');
-				$('.disc-product .disc-item').css('width','0px');				
-			};
-		});
+		//$('#test').on('click', function(){
+		//	if($(this).hasClass('active')){
+		//		$('.disc-product .disc-item').css('width','400px');				
+		//		$(this).removeClass('active');
+		//	}else{
+		//		$(this).addClass('active');
+		//		$('.disc-product .disc-item').css('width','0px');				
+		//	};
+		//});
 
 		$('.disc-product .disc-item').on('click', function(){			
 			var	that	 = $(this);
@@ -161,7 +199,6 @@ $(function() {
 
 					products.eq(ind-1).addClass('active');
 				};
-
 			deg+=90;
 			products.removeClass('active');
 			$('.disc-product .disc-item').removeClass('active');
@@ -170,59 +207,16 @@ $(function() {
 				'transform': 'rotate('+ deg +'deg)'
 			});
 			setTimeout(addClass,1000);
-		});
-
-		// $('.video').ripples({
-		// 			resolution: 512,
-		// 			dropRadius: 20, //px
-		// 			perturbance: 0.04,
-		// 			interactive: true
-		// 		});
-
-		// try {
-				// $('body').ripples({
-				// 	resolution: 512,
-				// 	dropRadius: 20, //px
-				// 	perturbance: 0.04,
-				// });
-			// 	$('.video').ripples({
-			// 		resolution: 512,
-			// 		dropRadius: 20, //px
-			// 		perturbance: 0.04,
-			// 		interactive: true
-			// 	});
-			// }
-			// catch (e) {
-			// 	$('.error').show().text(e);
-			// }
-
-			// $('.js-ripples-disable').on('click', function() {
-			// 	$('body, main').ripples('destroy');
-			// 	$(this).hide();
-			// });
-
-			// $('.js-ripples-play').on('click', function() {
-			// 	$('body, main').ripples('play');
-			// });
-
-			// $('.js-ripples-pause').on('click', function() {
-			// 	$('body, main').ripples('pause');
-			// });
-
-			// // Automatic drops
-			// setInterval(function() {
-			// 	var $el = $('main');
-			// 	var x = Math.random() * $el.outerWidth();
-			// 	var y = Math.random() * $el.outerHeight();
-			// 	var dropRadius = 20;
-			// 	var strength = 0.04 + Math.random() * 0.04;
-
-			// 	$el.ripples('drop', x, y, dropRadius, strength);
-			// }, 400);
+		});		
 		
+		if(localStorage.getItem("User")){			
+			$('.loader-wrap').detach();
+			//localStorage.clear()
+		}else{
+			localStorage.setItem("User", true)
+		};
 
-		setTimeout(function(){
-			// $('.loader-wrap').removeClass('active');
+		setTimeout(function(){			
 			$('.loader-wrap').fadeOut(600);
 		}, 5000);
 
@@ -231,36 +225,6 @@ $(function() {
 			if($("html").hasClass("chrome")) {
 					$.smoothScroll();
 			}
-		} catch(err) {};
-
-		function mapInit(){
-			$('.gmap').each(function(){
-			    var container = this;
-			    var latlng = new google.maps.LatLng(
-			        parseFloat($(container).data('lat')),
-			        parseFloat($(container).data('lng'))
-			    );
-			    var mapOptions = {
-			        zoom: parseInt($(container).data('zoom')),
-			        center: latlng,
-			        zoomControl: true,
-			        mapTypeControl: false,
-			        streetViewControl: false,
-			        scrollwheel: true,
-			        mapTypeId: google.maps.MapTypeId.ROADMAP
-			    };
-			    var map = new google.maps.Map(container, mapOptions);
-
-			    var marker = new google.maps.Marker({
-			        position: latlng,
-			        map: map,
-			        icon: $(container).data('marker')
-			    });
-			});
-		};
-		mapInit();
-
-
-
+		} catch(err) {};	
 	});
 });

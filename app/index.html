@@ -11,30 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta property="og:image" content="path/to/image.jpg">
 
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">		
-	
-	<style>
-		body{margin: 0;padding: 0;}
-/*		.loader-wrap{position: fixed;width: 100%;height: 100vh; z-index:1000;background-color: rgba(255,255,255, 1);}*/
-		/*svg#loader-logo{width: 400px;height: 400px;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);}*/
-		.abm {animation: abm 6000ms ease-in-out infinite;stroke: #E2001A;}
-		@keyframes abm{0% {stroke-dasharray: 0 300; stroke-dashoffset: 200;fill-opacity:0;stroke-width: 1;}
-			37% {stroke-dasharray:200 0; stroke-dashoffset: 200;fill-opacity: 0;stroke-width: 1;}
-			50% {fill-opacity: 1;stroke-width: 0;}
-			100% {fill-opacity: 1;stroke-width: 0;}}
-		.cloud{animation: cloud 5000ms ease-in-out;}
-		@keyframes cloud{0%{
-				transform: translateX(150px);
-				opacity: 0;}
-			100%{transform: translateX(0px);
-				opacity: 1;}}
-		.cloud2{animation: cloud2 5500ms ease-in-out;}
-		@keyframes cloud2{0%{
-				transform: translate(150px,-150px);
-				opacity: 0;}
-			100%{transform: translate(0px,0px);
-				opacity: 1;}}		
-	</style>	
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">	
 	
 	<!-- Load CSS Start -->
 	<link rel="stylesheet" href="css/vendor.min.css">
@@ -258,33 +235,83 @@
 	</div>
  -->
 		<div class="presentation">
+		<h2 class="title-section mb2 mt3">Отзывы наших клиентов</h2>			
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-md-7">
+					<div class="col-md-7 cloud-presentation">
 						<div class="disc-product">
 							<div class="disc-item active" data-index="1" data-deg="0">
 								
 							</div>
 							<div class="disc-item" data-index="2" data-deg="-45">
-								
+								<p>
+									<a href="#" 
+										class="cut-btn white mb1" 
+										data-show="popup-an">
+										<span></span>more
+									</a>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, corrupti. Omnis eveniet totam aliquam.
+								</p>
 							</div>
 							<div class="disc-item" data-index="3" data-deg="-90">
-								
+								<p>
+									<a href="#" 
+										class="cut-btn white mb1" 
+										data-show="popup-an">
+										<span></span>more
+									</a>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, corrupti. Omnis eveniet totam aliquam.
+								</p>
 							</div>
 							<div class="disc-item" data-index="4" data-deg="-135">
-								
+								<p>
+									<a href="#" 
+										class="cut-btn white mb1" 
+										data-show="popup-an">
+										<span></span>more
+									</a>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, corrupti. Omnis eveniet totam aliquam.
+								</p>
 							</div>
 							<div class="disc-item" data-index="5" data-deg="-180">
-								
+								<p>
+									<a href="#" 
+										class="cut-btn white mb1" 
+										data-show="popup-an">
+										<span></span>more
+									</a>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, corrupti. Omnis eveniet totam aliquam.
+								</p>
 							</div>
 							<div class="disc-item" data-index="6" data-deg="-225">
-								
+								<p>
+									<a href="#" 
+										class="cut-btn white mb1" 
+										data-show="popup-an">
+										<span></span>more
+									</a>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, corrupti. Omnis eveniet totam aliquam.
+								</p>
 							</div>
 							<div class="disc-item" data-index="7" data-deg="-270">
-								
+								<p>
+									<a href="#" 
+										class="cut-btn white mb1" 
+										data-show="popup-an">
+										<span></span>more
+									</a>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, corrupti. Omnis eveniet totam aliquam.
+								</p>
 							</div>
 							<div class="disc-item" data-index="8" data-deg="-315">
-								
+								<p>
+									<a href="#" 
+										class="cut-btn white mb1" 
+										data-show="popup-an">
+										<span></span>more
+									</a>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, corrupti. Omnis eveniet totam aliquam.
+								</p>
 							</div>
 						</div>						
 					</div>
@@ -353,164 +380,263 @@
 				</div>
 			</div>
 		</div>
-	<section class="slider comment-wrap">		
-		<div class="item comment-item">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="user-photo">
-							<img src="img/girl.png" alt="alt">
+		
+		<section class="diagonal-gradient">
+			<div class="cont-wrap">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6">
+							<img src="img/bubble_chat.png" alt="alt">
+						</div>
+						<div class="col-sm-6">
+							<div class="content">
+								<h3 class="title-defoult mb3">Lorem ipsum dolor sit amet, consectetur.</h3>
+								<ul>
+									<li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+									<li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+									<li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+									<li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+								</ul>							
+							</div>
 						</div>
 					</div>
-					<div class="col-sm-6 comment-content">
-						<p class="text">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores tempora nemo, sed reiciendis, assumenda placeat nesciunt laudantium itaque temporibus doloribus ipsam expedita at voluptates labore, a quos eius eligendi nostrum. Est dignissimos officia accusantium aliquid ullam earum, rem facilis labore.
-						</p>
-					</div>
-				</div>
-			</div>		
-		</div>
-		<div class="item comment-item">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="user-photo">
-							<img src="img/seampl1.jpg" alt="alt">
+				</div>				
+			</div>
+			<div class="cont-wrap">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="content">
+								<h3 class="title-defoult mb3">Lorem ipsum dolor sit amet, consectetur.</h3>
+								<ul>
+									<li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+									<li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+									<li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+									<li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+								</ul>							
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<img src="img/bubble_chat1.png" alt="alt">
 						</div>
 					</div>
-					<div class="col-sm-6 comment-content">
-						<p class="text">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores tempora nemo, sed reiciendis, assumenda placeat nesciunt laudantium itaque temporibus doloribus ipsam expedita at voluptates labore, a quos eius eligendi nostrum. Est dignissimos officia accusantium aliquid ullam earum, rem facilis labore.
-						</p>
-					</div>
-				</div>
-			</div>		
-		</div>
-		<div class="item comment-item">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="user-photo">
-							<img src="img/seampl2.jpg" alt="alt">
+				</div>				
+			</div>
+			<div class="cont-wrap">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6">
+							<img src="img/bubble_chat3.png" alt="alt">
+						</div>
+						<div class="col-sm-6">
+							<div class="content">
+								<h3 class="title-defoult mb3">Lorem ipsum dolor sit amet, consectetur.</h3>
+								<ul>
+									<li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+									<li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+									<li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+									<li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+								</ul>							
+							</div>
 						</div>
 					</div>
-					<div class="col-sm-6 comment-content">
-						<p class="text">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores tempora nemo, sed reiciendis, assumenda placeat nesciunt laudantium itaque temporibus doloribus ipsam expedita at voluptates labore, a quos eius eligendi nostrum. Est dignissimos officia accusantium aliquid ullam earum, rem facilis labore.
-						</p>
+				</div>				
+			</div>
+		</section>
+
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="title-section mb2 mt3">Отзывы наших клиентов</h2>			
+						<div class="slider slider-custom comment-wrap">		
+							<div class="item comment-item">
+								<div class="container">
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="user-photo">
+												<img src="img/girl.png" alt="alt">
+											</div>
+										</div>
+										<div class="col-sm-6 comment-content">
+											<p class="text">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores tempora nemo, sed reiciendis, assumenda placeat nesciunt laudantium itaque temporibus doloribus ipsam expedita at voluptates labore, a quos eius eligendi nostrum. Est dignissimos officia accusantium aliquid ullam earum, rem facilis labore.
+											</p>
+										</div>
+									</div>
+								</div>		
+							</div>
+							<div class="item comment-item">
+								<div class="container">
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="user-photo">
+												<img src="img/seampl1.jpg" alt="alt">
+											</div>
+										</div>
+										<div class="col-sm-6 comment-content">
+											<p class="text">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores tempora nemo, sed reiciendis, assumenda placeat nesciunt laudantium itaque temporibus doloribus ipsam expedita at voluptates labore, a quos eius eligendi nostrum. Est dignissimos officia accusantium aliquid ullam earum, rem facilis labore.
+											</p>
+										</div>
+									</div>
+								</div>		
+							</div>
+							<div class="item comment-item">
+								<div class="container">
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="user-photo">
+												<img src="img/seampl2.jpg" alt="alt">
+											</div>
+										</div>
+										<div class="col-sm-6 comment-content">
+											<p class="text">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores tempora nemo, sed reiciendis, assumenda placeat nesciunt laudantium itaque temporibus doloribus ipsam expedita at voluptates labore, a quos eius eligendi nostrum. Est dignissimos officia accusantium aliquid ullam earum, rem facilis labore.
+											</p>
+										</div>
+									</div>
+								</div>		
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>		
+			</div>
+	</section>
+	
+	<section>		
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="title-section mb2 mt3">Наши клиенты и кейсы</h2>
+					<div class="carousel slider-custom comment-wrap">
+									<div class="item"><img src="img/client1.png" alt="image"></div>
+									<div class="item"><img src="img/client2.png" alt="image"></div>
+									<div class="item"><img src="img/client3.png" alt="image"></div>
+									<div class="item"><img src="img/client4.png" alt="image"></div>
+									<div class="item"><img src="img/client5.png" alt="image"></div>
+									<div class="item"><img src="img/client6.png" alt="image"></div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 
-	 <section class="card-blog">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div id="da-thumbs" data-packery="{&quot;itemSelector&quot;: &quot;.blog-grid&quot;,&quot;gutter&quot;: 10}" class="grid shema-blog da-thumbs">
+	<section class="send-section gradient">		
+		<h3 class="text-variant">Подпишитесь на рассылку, <span>и получайте новости от ABMCloud</span></h3>
+		<form action="action" class="style">
+			<input type="email" placeholder="Введите ваш E-mail" required>
+			<button type="submit" class="btn">подписаться</button>
+		</form>
+	</section>
 
-                <div class="blog-grid">
-                  <div class="site-screen">
-                    <div class="img_wrap">
-                    	<img src="img/client1.png" alt="alt">
-                    </div>
-                  </div>
-                  <div class="site-descr">
-                    <div class="descr-wrap"><span>tsumbaluk.in.ua || 28.12.2016</span>
-                      <h3 class="anim-title">Стартовая настройка Gulp</h3>
-	                      <a href="#" class="read-more">
-	                      	<i class="fa fa-long-arrow-right"></i>
-	                      </a>
-                    </div>
-                  </div>
-                </div>
-
-              	<div class="blog-grid">
-                  <div class="site-screen">
-                    <div class="img_wrap">
-                    	<img src="img/client2.png" alt="alt">
-                    </div>
-                  </div>
-                  <div class="site-descr">
-                    <div class="descr-wrap"><span>tsumbaluk.in.ua || 28.12.2016</span>
-                      <h3 class="anim-title">Стартовая настройка Gulp</h3>
-	                      <a href="#" class="read-more">
-	                      	<i class="fa fa-long-arrow-right"></i>
-	                      </a>
-                    </div>
-                  </div>
-                </div>
+	<!--  <section class="card-blog">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div id="da-thumbs" data-packery="{&quot;itemSelector&quot;: &quot;.blog-grid&quot;,&quot;gutter&quot;: 10}" class="grid shema-blog da-thumbs">
 
 								<div class="blog-grid">
-                  <div class="site-screen">
-                    <div class="img_wrap">
-                    	<img src="img/client3.png" alt="alt">
-                    </div>
-                  </div>
-                  <div class="site-descr">
-                    <div class="descr-wrap"><span>tsumbaluk.in.ua || 28.12.2016</span>
-                      <h3 class="anim-title">Стартовая настройка Gulp</h3>
-	                      <a href="#" class="read-more">
-	                      	<i class="fa fa-long-arrow-right"></i>
-	                      </a>
-                    </div>
-                  </div>
-                </div>
+									<div class="site-screen">
+										<div class="img_wrap">
+											<img src="img/client1.png" alt="alt">
+										</div>
+									</div>
+									<div class="site-descr">
+										<div class="descr-wrap"><span>tsumbaluk.in.ua || 28.12.2016</span>
+											<h3 class="anim-title">Стартовая настройка Gulp</h3>
+												<a href="#" class="read-more">
+													<i class="fa fa-long-arrow-right"></i>
+												</a>
+										</div>
+									</div>
+								</div>
 
-                <div class="blog-grid">
-                  <div class="site-screen">
-                    <div class="img_wrap">
-                    	<img src="img/client4.png" alt="alt">
-                    </div>
-                  </div>
-                  <div class="site-descr">
-                    <div class="descr-wrap"><span>tsumbaluk.in.ua || 28.12.2016</span>
-                      <h3 class="anim-title">Стартовая настройка Gulp</h3>
-	                      <a href="#" class="read-more">
-	                      	<i class="fa fa-long-arrow-right"></i>
-	                      </a>
-                    </div>
-                  </div>
-                </div>
+								<div class="blog-grid">
+									<div class="site-screen">
+										<div class="img_wrap">
+											<img src="img/client2.png" alt="alt">
+										</div>
+									</div>
+									<div class="site-descr">
+										<div class="descr-wrap"><span>tsumbaluk.in.ua || 28.12.2016</span>
+											<h3 class="anim-title">Стартовая настройка Gulp</h3>
+												<a href="#" class="read-more">
+													<i class="fa fa-long-arrow-right"></i>
+												</a>
+										</div>
+									</div>
+								</div>
 
-                <div class="blog-grid">
-                  <div class="site-screen">
-                    <div class="img_wrap">
-                    	<img src="img/client5.png" alt="alt">
-                    </div>
-                  </div>
-                  <div class="site-descr">
-                    <div class="descr-wrap"><span>tsumbaluk.in.ua || 28.12.2016</span>
-                      <h3 class="anim-title">Стартовая настройка Gulp</h3>
-	                      <a href="#" class="read-more">
-	                      	<i class="fa fa-long-arrow-right"></i>
-	                      </a>
-                    </div>
-                  </div>
-                </div>
+								<div class="blog-grid">
+									<div class="site-screen">
+										<div class="img_wrap">
+											<img src="img/client3.png" alt="alt">
+										</div>
+									</div>
+									<div class="site-descr">
+										<div class="descr-wrap"><span>tsumbaluk.in.ua || 28.12.2016</span>
+											<h3 class="anim-title">Стартовая настройка Gulp</h3>
+												<a href="#" class="read-more">
+													<i class="fa fa-long-arrow-right"></i>
+												</a>
+										</div>
+									</div>
+								</div>
 
-                <div class="blog-grid">
-                  <div class="site-screen">
-                    <div class="img_wrap">
-                    	<img src="img/client6.png" alt="alt">
-                    </div>
-                  </div>
-                  <div class="site-descr">
-                    <div class="descr-wrap"><span>tsumbaluk.in.ua || 28.12.2016</span>
-                      <h3 class="anim-title">Стартовая настройка Gulp</h3>
-	                      <a href="#" class="read-more">
-	                      	<i class="fa fa-long-arrow-right"></i>
-	                      </a>
-                    </div>
-                  </div>
-                </div>
+								<div class="blog-grid">
+									<div class="site-screen">
+										<div class="img_wrap">
+											<img src="img/client4.png" alt="alt">
+										</div>
+									</div>
+									<div class="site-descr">
+										<div class="descr-wrap"><span>tsumbaluk.in.ua || 28.12.2016</span>
+											<h3 class="anim-title">Стартовая настройка Gulp</h3>
+												<a href="#" class="read-more">
+													<i class="fa fa-long-arrow-right"></i>
+												</a>
+										</div>
+									</div>
+								</div>
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+								<div class="blog-grid">
+									<div class="site-screen">
+										<div class="img_wrap">
+											<img src="img/client5.png" alt="alt">
+										</div>
+									</div>
+									<div class="site-descr">
+										<div class="descr-wrap"><span>tsumbaluk.in.ua || 28.12.2016</span>
+											<h3 class="anim-title">Стартовая настройка Gulp</h3>
+												<a href="#" class="read-more">
+													<i class="fa fa-long-arrow-right"></i>
+												</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="blog-grid">
+									<div class="site-screen">
+										<div class="img_wrap">
+											<img src="img/client6.png" alt="alt">
+										</div>
+									</div>
+									<div class="site-descr">
+										<div class="descr-wrap"><span>tsumbaluk.in.ua || 28.12.2016</span>
+											<h3 class="anim-title">Стартовая настройка Gulp</h3>
+												<a href="#" class="read-more">
+													<i class="fa fa-long-arrow-right"></i>
+												</a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</section> -->
 </main>
 
 <footer>

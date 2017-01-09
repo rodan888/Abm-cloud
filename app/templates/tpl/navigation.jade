@@ -1,0 +1,30 @@
+-
+	var nav = [
+		{
+			title:'Home',
+			page_url: '/'
+		},
+		{
+			title:'Product',
+			page_url: 'product.html'
+		},
+		{
+			title:'Advantages',
+			page_url: 'advantages.html'
+		},
+		{
+			title:'About',
+			page_url: 'about.html'
+		},		
+		{
+			title:'Contacts',
+			page_url: 'contacts.html'
+		}					
+	];
+for val, index in nav
+	if index === 0
+		li.active
+			a(href=val.page_url)= val.title
+	else
+		li
+			a(href=val.page_url)= val.title

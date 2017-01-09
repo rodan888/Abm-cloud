@@ -1,0 +1,29 @@
+section.diagonal-gradient
+	-
+		var list = ['img/bubble_chat.png','img/bubble_chat1.png','img/bubble_chat3.png']
+	for item, index in list
+		div.cont-wrap
+			div.container
+				div.row
+					if index%2 === 0
+						div.col-sm-6
+							img(src= item alt="alt")
+						div.col-sm-6
+							div.content
+								h3.title-defoult.mb3 Lorem ipsum dolor sit amet, consectetur.
+								ul
+									li Lorem ipsum dolor sit amet, consectetur adipisicing.
+									li Lorem ipsum dolor sit amet, consectetur adipisicing.
+									li Lorem ipsum dolor sit amet, consectetur adipisicing.
+									li Lorem ipsum dolor sit amet, consectetur adipisicing.
+					else
+						div.col-sm-6
+							div.content
+								h3.title-defoult.mb3 Lorem ipsum dolor sit amet, consectetur.
+								ul
+									li Lorem ipsum dolor sit amet, consectetur adipisicing.
+									li Lorem ipsum dolor sit amet, consectetur adipisicing.
+									li Lorem ipsum dolor sit amet, consectetur adipisicing.
+									li Lorem ipsum dolor sit amet, consectetur adipisicing.
+						div.col-sm-6
+							img(src= item alt="alt")

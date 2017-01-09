@@ -1,0 +1,28 @@
+section.advantages
+	div.container
+		div.row
+			div.col-md-12
+				-
+					var advanList = [
+						{
+							class: 'fa-area-chart',
+							description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit nobis asperiores adipisci quasi quisquam? Fuga voluptatum eum, numquam rerum, nostrum aperiam! Magni asperiores, perferendis. Accusantium natus, voluptatum deserunt minima aut!'
+						},{
+							class: 'fa-line-chart',
+							description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit nobis asperiores adipisci quasi quisquam? Fuga voluptatum eum, numquam rerum, nostrum aperiam! Magni asperiores, perferendis. Accusantium natus, voluptatum deserunt minima aut!'
+						},{
+							class: 'fa-thumbs-o-up',
+							description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit nobis asperiores adipisci quasi quisquam? Fuga voluptatum eum, numquam rerum, nostrum aperiam! Magni asperiores, perferendis. Accusantium natus, voluptatum deserunt minima aut!'
+						},{
+							class: 'fa-pie-chart',
+							description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit nobis asperiores adipisci quasi quisquam? Fuga voluptatum eum, numquam rerum, nostrum aperiam! Magni asperiores, perferendis. Accusantium natus, voluptatum deserunt minima aut!'
+						},{
+							class: 'fa-user',
+							description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit nobis asperiores adipisci quasi quisquam? Fuga voluptatum eum, numquam rerum, nostrum aperiam! Magni asperiores, perferendis. Accusantium natus, voluptatum deserunt minima aut!'
+						}
+					];
+				for val, index in advanList
+					div.advan-item(data-index= index+1)
+						div.icon-block
+							i(class="fa "+ val.class)
+						p(class="text")= val.description

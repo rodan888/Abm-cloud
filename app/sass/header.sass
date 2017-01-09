@@ -80,10 +80,21 @@ input,textarea,button
 	color: $textColor
 	margin-bottom: 25px
 
-.title-defoult
+.title-defoult,.title-section
 	font-family: "RobotoLight"
 	font-weight: 100
 	font-size: 32px	
+.title-section
+	position: relative
+	padding-left: 20px
+	&:before
+		position: absolute
+		content: ''
+		top: -5px
+		left: 0
+		width: 1px
+		height: 62px
+		background-color: $textColor
 
 .text-variant
 	font-family: "RobotoLight"
@@ -108,7 +119,7 @@ input,textarea,button
 	@include transition(all 1.3s)
 	#loader-logo
 		width: 235px
-		height: 65px		
+		height: 65px
 		position: absolute
 		top: 50%
 		left: 50%
@@ -118,7 +129,47 @@ input,textarea,button
 		height: 100vh
 		#loader-logo
 			width: 400px
-			height: 400px	
+			height: 400px
+.abm
+	animation: abm 6000ms ease-in-out infinite
+	stroke: #E2001A
+.cloud
+	animation: cloud 5000ms ease-in-out
+.cloud2
+	animation: cloud2 5500ms ease-in-out
+
+@keyframes abm
+	0% 
+		stroke-dasharray: 0 300
+		stroke-dashoffset: 200
+		fill-opacity: 0
+		stroke-width: 1
+	37% 
+		stroke-dasharray: 200 0
+		stroke-dashoffset: 200
+		fill-opacity: 0
+		stroke-width: 1
+	50% 
+		fill-opacity: 1
+		stroke-width: 0
+	100% 
+		fill-opacity: 1
+		stroke-width: 0
+		
+@keyframes cloud
+	0%
+		transform: translateX(150px)
+		opacity: 0
+	100%
+		transform: translateX(0px)
+		opacity: 1
+@keyframes cloud2
+	0%
+		transform: translate(150px,-150px)
+		opacity: 0
+	100%
+		transform: translate(0px,0px)
+		opacity: 1
 
 header
 	box-shadow: 0 1px 3px $blackLight
@@ -146,11 +197,22 @@ header
 				vertical-align: top
 				a
 					display: block
+					position: relative
 					padding: 0 10px
 					color: $black
 					line-height: 65px
 					text-align: center
 					font-size: 14px
+				&.active a
+					&:before
+						position: absolute
+						content: ''
+						top: 45px
+						left: 0
+						width: 90%
+						left: 5%
+						height: 3px
+						background-color: $main
 	.fixed-nav
 		position: fixed
 		top: -185px
@@ -281,6 +343,7 @@ header
 		position: relative
 	.lang-switcher
 		position: absolute
+		z-index: 100
 		right: -30px
 		top: 19px
 		border-left: 1px solid $main
@@ -453,20 +516,20 @@ header
 
 // Burger button start----------------------
 .mob-button			
-	position: relative
+	position: fixed
 	width: 32px
 	height: 32px
 	cursor: pointer	
 	z-index: 1000		
-	top: 32px
-	right: 12px
-	margin: 0 auto
+	top: 8px
+	left: 8px
+	display: none
 	span
 		position: absolute
 		width: 100%
 		left: 0
 		height: 3px
-		background-color: $black
+		background-color: $white
 		@include transition(all 0.3s)
 		&:nth-child(1)
 			top: 4px

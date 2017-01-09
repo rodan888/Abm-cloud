@@ -1,0 +1,82 @@
+doctype html
+html.no-js(lang="ru")
+	include templates/structure/head
+	body
+		include templates/structure/header
+		main
+			section.top-triangle
+				div.content
+					h1.title-defoult Lorem ipsum dolor sit.
+			section#content
+				div.cont-wrap
+					include templates/tpl/breadcramb
+					div.info-block
+						span.slug site-name.in.ua
+						span.date 15.06.2016
+					div.content
+						h3 Page title!
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo atque a deleniti ipsam, tempora repudiandae quibusdam necessitatibus doloremque fugit dolor consectetur, id optio, odio exercitationem temporibus modi minima adipisci. Cumque possimus magni deleniti? Atque, fugiat. Nostrum vitae, amet voluptatum saepe.
+						blockquote Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga incidunt nulla numquam hic laudantium consequatur, eos cumque vero repellat. Modi id vel sunt laborum iusto consequatur, saepe laudantium quam doloremque!
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo atque a deleniti ipsam, tempora repudiandae quibusdam necessitatibus doloremque fugit dolor consectetur, id optio, odio exercitationem temporibus modi minima adipisci. Cumque possimus magni deleniti? Atque, fugiat. Nostrum vitae, amet voluptatum saepe.</p>
+						p 
+							img(src="img/chart.png")
+							| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo atque a deleniti ipsam, tempora repudiandae quibusdam necessitatibus doloremque fugit dolor consectetur, id optio, odio exercitationem temporibus modi minima adipisci. Cumque possimus magni deleniti? Atque, fugiat. Nostrum vitae, amet voluptatum saepe.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo atque a deleniti ipsam, tempora repudiandae quibusdam necessitatibus doloremque fugit dolor consectetur, id optio, odio exercitationem temporibus modi minima adipisci. magni deleniti? Atque, fugiat. Nostrum vitae, amet voluptatum saepe.
+							a(href="#") read.
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, excepturi maxime hic ipsa quam explicabo in porro culpa mollitia dolorem natus non nesciunt? Incidunt enim libero accusantium distinctio quia mollitia.
+
+						div.share-block.right.mt1
+							span.label Поделиться:
+							button(type="button" onclick="Share.twitter('URL','TITLE','IMG_PATH','DESC')" class="facebook")
+								i.fa.fa-twitter
+							button(type="button" onclick="Share.facebook('URL','TITLE','IMG_PATH','DESC')" class="facebook")
+								i.fa.fa-facebook
+							button(type="button" onclick="Share.vkontakte('http://tsumbaluk.in.ua/','TITLE','http://tsumbaluk.in.ua/wp-content/uploads/2016/01/maket2.jpg','DESC')" class="vk")
+								i.fa.fa-vk
+			include templates/widgets/subscribe
+
+		include templates/structure/footer
+		include templates/structure/scripts
+		script.
+			Share = {
+				vkontakte: function(purl, ptitle, pimg, text) {
+					url  = 'http://vkontakte.ru/share.php?';
+					url += 'url='          + encodeURIComponent(purl);
+					url += '&title='       + encodeURIComponent(ptitle);
+					url += '&description=' + encodeURIComponent(text);
+					url += '&image='       + encodeURIComponent(pimg);
+					url += '&noparse=true';
+					Share.popup(url);
+				},
+				odnoklassniki: function(purl, text) {
+					url  = 'http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1';
+					url += '&st.comments=' + encodeURIComponent(text);
+					url += '&st._surl='    + encodeURIComponent(purl);
+					Share.popup(url);
+				},
+				facebook: function(purl, ptitle, pimg, text) {
+					url  = 'http://www.facebook.com/sharer.php?s=100';
+					url += '&p[title]='     + encodeURIComponent(ptitle);
+					url += '&p[summary]='   + encodeURIComponent(text);
+					url += '&p[url]='       + encodeURIComponent(purl);
+					url += '&p[images][0]=' + encodeURIComponent(pimg);
+					Share.popup(url);
+				},
+				twitter: function(purl, ptitle) {
+					url  = 'http://twitter.com/share?';
+					url += 'text='      + encodeURIComponent(ptitle);
+					url += '&url='      + encodeURIComponent(purl);
+					url += '&counturl=' + encodeURIComponent(purl);
+					Share.popup(url);
+				},
+				mailru: function(purl, ptitle, pimg, text) {
+					url  = 'http://connect.mail.ru/share?';
+					url += 'url='          + encodeURIComponent(purl);
+					url += '&title='       + encodeURIComponent(ptitle);
+					url += '&description=' + encodeURIComponent(text);
+					url += '&imageurl='    + encodeURIComponent(pimg);
+					Share.popup(url)
+				},
+				popup: function(url) {
+					window.open(url,'','toolbar=0,status=0,width=626,height=436');
+				}
+			};

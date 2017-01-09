@@ -1,0 +1,106 @@
+div.presentation
+	div.container-fluid
+		div.row
+			div.col-md-7.cloud-presentation
+				div.disc-product
+					-
+						var triList = [
+							{
+								deg: 0,
+								text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, corrupti. Omnis eveniet totam aliquam.'
+							},
+							{
+								deg: -45,
+								text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, corrupti. Omnis eveniet totam aliquam.'
+							},
+							{
+								deg: -90,
+								text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, corrupti. Omnis eveniet totam aliquam.'
+							},
+							{
+								deg: -135,
+								text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, corrupti. Omnis eveniet totam aliquam.'
+							},
+							{
+								deg: -180,
+								text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, corrupti. Omnis eveniet totam aliquam.'
+							},
+							{
+								deg: -225,
+								text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, corrupti. Omnis eveniet totam aliquam.'
+							},
+							{
+								deg: -270,
+								text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, corrupti. Omnis eveniet totam aliquam.'
+							},
+							{
+								deg: -315,
+								text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, corrupti. Omnis eveniet totam aliquam.'
+							}
+						];
+					for item, index in triList
+						if index === 0
+							div.disc-item.active(data-index= index+1 data-deg= item.deg)
+								p
+									a(href="content-page.html" class="cut-btn white mb1" data-show="popup-an")
+										span 
+										| more
+									| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, corrupti. Omnis eveniet totam aliquam.
+						else
+							div.disc-item(data-index= index+1 data-deg= item.deg)
+								p
+									a(href="content-page.html" class="cut-btn white mb1" data-show="popup-an")
+										span
+										| more
+									| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, corrupti. Omnis eveniet totam aliquam.
+						
+
+			div.col-md-5
+				div.product-wrap
+					-
+						var prodList = [
+							{
+								img: 'img/advan1.png',
+								text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptatibus fuga doloremque suscipit, aperiam temporibus.'
+							},
+							{
+								img: 'img/advan2.png',
+								text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptatibus fuga doloremque suscipit, aperiam temporibus.'
+							},
+							{
+								img: 'img/advan3.png',
+								text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptatibus fuga doloremque suscipit, aperiam temporibus.'
+							},
+							{
+								img: 'img/advan1.png',
+								text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptatibus fuga doloremque suscipit, aperiam temporibus.'
+							},
+							{
+								img: 'img/advan2.png',
+								text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptatibus fuga doloremque suscipit, aperiam temporibus.'
+							},
+							{
+								img: 'img/advan3.png',
+								text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptatibus fuga doloremque suscipit, aperiam temporibus.'
+							},
+							{
+								img: 'img/advan1.png',
+								text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptatibus fuga doloremque suscipit, aperiam temporibus.'
+							},
+							{
+								img: 'img/advan2.png',
+								text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptatibus fuga doloremque suscipit, aperiam temporibus.'
+							}
+
+						];
+					for item, index in prodList
+						if index === 0
+							div.product-item.active(data-index="0" + (index+1))
+								p.text= item.text
+									a(href="content-page.html") read more...
+								img(src= item.img alt="alt")
+						else 
+							div.product-item(data-index="0" + (index+1))
+								p.text= item.text
+									a(href="content-page.html") read more...
+								img(src= item.img alt="alt")

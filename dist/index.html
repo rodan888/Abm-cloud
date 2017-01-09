@@ -1,552 +1,287 @@
 <!DOCTYPE html>
-<html class="no-js" lang="ru">
-
-<head>
-	<meta charset="utf-8">
-
-	<title>Start</title>
-	<meta name="description" content="">
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta property="og:image" content="path/to/image.jpg">
-
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">		
-	
-	<style>
-		body{margin: 0;padding: 0;}
-/*		.loader-wrap{position: fixed;width: 100%;height: 100vh; z-index:1000;background-color: rgba(255,255,255, 1);}*/
-		/*svg#loader-logo{width: 400px;height: 400px;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);}*/
-		.abm {animation: abm 6000ms ease-in-out infinite;stroke: #E2001A;}
-		@keyframes abm{0% {stroke-dasharray: 0 300; stroke-dashoffset: 200;fill-opacity:0;stroke-width: 1;}
-			37% {stroke-dasharray:200 0; stroke-dashoffset: 200;fill-opacity: 0;stroke-width: 1;}
-			50% {fill-opacity: 1;stroke-width: 0;}
-			100% {fill-opacity: 1;stroke-width: 0;}}
-		.cloud{animation: cloud 5000ms ease-in-out;}
-		@keyframes cloud{0%{
-				transform: translateX(150px);
-				opacity: 0;}
-			100%{transform: translateX(0px);
-				opacity: 1;}}
-		.cloud2{animation: cloud2 5500ms ease-in-out;}
-		@keyframes cloud2{0%{
-				transform: translate(150px,-150px);
-				opacity: 0;}
-			100%{transform: translate(0px,0px);
-				opacity: 1;}}		
-	</style>	
-	
-	<!-- Load CSS Start -->
-	<link rel="stylesheet" href="css/vendor.min.css">
-	<link rel="stylesheet" href="css/header.min.css">
-	<link rel="stylesheet" href="css/main.min.css">
-	<!-- Load CSS End -->
-
-
-</head>
-
-<body>
-	<!-- <div class="loader-wrap active">
-		<svg  version="1.1"
-		xmlns="http://www.w3.org/2000/svg" 
-		xmlns:xlink="http://www.w3.org/1999/xlink" 
-		viewBox="0 0 100 30"
-		id="loader-logo">
-		<g>
-			<path class="cloud2" fill="#009EE0" d="M64.6643982,3.6538c0.1556015,0.0581,0.3093033,0.1207998,0.459404,0.1870999
-			C65.9554977,2.9268,66.976799,2.198,68.1140976,1.7074c3.0727005-1.3254,6.6305008-0.7594,9.1396027,1.4546
-			c0.8984985,0.7923999,1.625,1.7668998,2.1302032,2.8552997c0.2388-0.0379996,0.479393-0.0653996,0.720993-0.0827999
-			c0.6580048-0.0461998,1.3268051-0.0183001,1.9967041,0.0905938c4.7106018,0.7649064,7.9225006,5.223,7.1575012,9.9333057
-			c-0.1611023,0.9924002-1.0268021,3.7594004-2.3334045,4.6533995c-0.1555939,0.1070995-0.2964935,0.1694012-0.4887009,0.2352009
-			c-0.3064957,0.1042995-1.8538971-0.8839054-2.0149002-1.7221012c0.7797012-0.8729,1.788002-2.2596989,2.0141068-3.6551991
-			c0.2624969-1.6210003-0.0083008-3.1408005-0.8978043-4.3757c-1.4914017-2.0698004-4.1697998-2.9652996-6.5955963-2.2070999
-			l-1.3104019,0.4095001l-0.387001-1.3186002c-0.3174973-1.0788999-0.938797-2.0465002-1.7798004-2.7891002
-			C73.7545013,3.6789,71.2764969,3.2835999,69.1810989,4.1876998c-1.0358963,0.447-1.9335022,1.1859002-2.5740967,2.1311002
-			l-0.7347031,1.0834999l-1.1054001-0.6905003c-4.0426979-2.1141996-8.2902985,1.2504001-8.2527008,5.3058996
-			c-1.4997978,1.2207003-3.2182999,0.1830006-3.2804985-0.3251991c-0.0036011-0.0298004-0.5289001-3.5669003,3.3242989-6.9581003
-			C58.9179993,3.0342,61.952301,2.6357,64.6643982,3.6538L64.6643982,3.6538z"/>
-			<path class="abm" fill="#E2001A" d="M9.6299,21.4508991L8.4422998,21.468399H5.7811999l-1.1876998-0.0174999L3.543,24.1758995
-			c-0.2058001,0.0429993-0.4776001,0.0631943-0.8052001,0.0631943c-0.3330998,0-0.6605999-0.0366936-0.9845998-0.1134949
-			l-0.0567001-0.0795994l4.4123001-10.8301001c0.2600002-0.0438061,0.6368999-0.0670996,1.131-0.0670996
-			c0.4905,0,0.8464999,0.0232935,1.0688004,0.0670996L12.7062998,24.0625
-			c-0.2881994,0.1399002-0.6286001,0.2103996-1.0212002,0.2103996c-0.3970995,0-0.6770992-0.0603008-0.8399992-0.1774998
-			C10.684,23.9783001,10.5376997,23.7514,10.4076996,23.421093L9.6299,21.4508991L9.6299,21.4508991z M5.1004,20.1534996
-			l1.0286002-0.0174999h2.0056996c0.0237999,0,0.1666002,0.0037003,0.4254999,0.0100002
-			c0.2589998,0.0037003,0.4492998,0.0074997,0.5628004,0.0074997l-0.9516001-2.4844055
-			c-0.3889003-0.9712944-0.7247-1.9230003-1.0084-2.8508949H7.0448999c-0.2068,0.7677002-0.4537997,1.5090008-0.7420998,2.2268009
-			L5.1004,20.1534996L5.1004,20.1534996z M18.2954006,24.222599l-4.2220011-0.0466995L13.9398003,24.0625V13.3093996
-			l0.1335993-0.1103058l3.9869013-0.0502939c1.4026985,0,2.4558983,0.2538996,3.1613998,0.7612934
-			c0.7082996,0.5078068,1.0614986,1.2216063,1.0614986,2.1402054c0,0.5037003-0.174799,0.9613018-0.5142994,1.3785
-			c-0.3449993,0.4172955-0.794199,0.7115002-1.3542004,0.8817005c0.700901,0.1592007,1.2884007,0.4978008,1.7714996,1.0084
-			c0.4777012,0.5142994,0.7173004,1.1081009,0.7173004,1.7789001c0,0.9314003-0.3768997,1.6826992-1.1345997,2.2600994
-			C21.0067005,23.9352989,19.8519001,24.222599,18.2954006,24.222599L18.2954006,24.222599z M18.1783009,19.031599h-2.3141012
-			v3.9721012c0.5718012-0.0100002,1.2526999-0.013607,2.0423002-0.013607c0.7896996,0,1.3661003-0.062294,1.7304001-0.1866932
-			c0.3642006-0.1198997,0.6277008-0.2901001,0.7978992-0.5033054c0.3130016-0.3943958,0.4666004-0.8345947,0.4666004-1.3222942
-			c0-0.4840012-0.2103996-0.9314003-0.6322002-1.338707C19.8472996,19.2346992,19.1501007,19.031599,18.1783009,19.031599
-			L18.1783009,19.031599z M15.8641996,14.3839998v3.3984995h2.1192007c0.8556004,0,1.4548988-0.1665993,1.7999001-0.4972992
-			c0.344099-0.3303013,0.5142002-0.7312012,0.5142002-1.2014999c0-1.1223001-0.7576008-1.6827002-2.2729015-1.6827002
-			C17.0235004,14.401,16.3061008,14.3940935,15.8641996,14.3839998L15.8641996,14.3839998z M24.4116001,24.1420937
-			l1.0294991-10.9261942c0.3001003-0.0438061,0.7256012-0.0670996,1.2846012-0.0670996
-			c0.5590992,0,0.9808998,0.0232935,1.2646999,0.0670996L29.9347992,18.3736
-			c0.1061001,0.2470989,0.2480011,0.6744938,0.4300003,1.2819996c0.1776009,0.6112003,0.2919998,1.0147991,0.3276005,1.2189007
-			h0.1180992c0.1299-0.6753006,0.3889008-1.5062008,0.7786999-2.5009003l1.9244003-5.1577005
-			c0.3239021-0.0438061,0.7530022-0.0670996,1.2847023-0.0670996c0.5297966,0,0.9524994,0.0232935,1.2635994,0.0670996
-			l1.0293999,10.9261942c-0.2717018,0.0632057-0.5828018,0.0970001-0.9397011,0.0970001
-			c-0.3568001,0-0.6607018-0.020195-0.9076996-0.0631943l-0.4868011-6.0429001
-			c-0.0887985-1.2045994-0.1409988-2.2734995-0.153698-3.2045002h-0.1170998l-2.7434006,7.5482006
-			c-0.2716999,0.0429993-0.6039009,0.0630989-1.0010014,0.0630989c-0.3934994,0-0.7173996-0.0200996-0.9608002-0.0630989
-			l-2.7633991-7.5482006h-0.1172009c-0.0768986,1.8393002-0.1299,2.9075012-0.1536999,3.2045002l-0.4666996,6.0429001
-			c-0.2598991,0.0429993-0.5709991,0.0631943-0.9361,0.0631943C24.9834995,24.2390938,24.6714993,24.2052994,24.4116001,24.1420937
-			L24.4116001,24.1420937z"/>	
-			<path class="cloud" fill-rule="evenodd" clip-rule="evenodd" fill="#009EE0" d="M44.6002007,18.046999c0-0.0604,0-0.1217995,0-0.1829987
-			c0-1.1640015-0.4877014-1.7304001-1.669899-1.7304001c-0.6021004,0-1.0688019,0.2213993-1.4147034,0.7182999
-			c-0.4473991,0.6432991-0.5435982,1.5848999-0.5435982,2.3461933c0,0.8208065,0.1282005,1.8850002,0.8181,2.4358063
-			c0.3917007,0.3139,0.894001,0.4090996,1.3835983,0.4090996c0.8748016,0,1.8063011-0.4493008,2.5346031-0.8959045
-			l0.1702995-0.1041946L46.0597,21.1288986c0.2728004,0.1281013,0.5051003,0.3220005,0.7000008,0.5508003
-			c0.1857986,0.2159004,0.3449974,0.462101,0.428299,0.7357006l0.0723,0.2360992l-0.1912994,0.1573009
-			c-1.2005005,0.9892006-2.6096992,1.4366989-4.1605988,1.4366989c-1.398201,0-2.759903-0.3604984-3.6877022-1.4658985
-			c-0.894001-1.0643005-1.2070007-2.3993015-1.2070007-3.7645073c0-1.4064941,0.392601-2.7144928,1.4513016-3.6802931
-			c0.9818001-0.8963003,2.1623001-1.3122005,3.4872017-1.3122005c1.1199989,0,2.2994995,0.210495,3.1934967,0.9314947
-			c0.6753006,0.5454054,1.1914024,1.2546062,1.1914024,2.1522064c0,0.9259987-0.5837021,1.3835983-1.4796028,1.3835983
-			c-0.3183975,0-0.6450996-0.0183983-0.9579964-0.0786991l-0.2993011-0.0585995V18.046999L44.6002007,18.046999z M51.2901993,21.934
-			h1.1071014l0.0970001,0.2196999c0.1226997,0.2763004,0.2086983,0.5764999,0.2086983,0.8810997
-			c0,0.2059994-0.0109978,0.4200993-0.0513,0.6213989l-0.0512009,0.2562008l-0.2589989,0.0366001
-			c-0.6268005,0.0905991-1.2599983,0.1317997-1.8931999,0.1317997c-1.4403,0-2.4778976-0.6185989-2.4778976-2.1604004V10.1441994
-			l0.3714981-0.3051996h0.9305c0.4054985,0,0.8830986,0.0621996,1.1777,0.3705997
-			c0.2818985,0.2955999,0.3459015,0.7403002,0.3459015,1.1323004v10.1584988
-			C50.7960014,21.8507996,50.9514999,21.934,51.2901993,21.934L51.2901993,21.934z M61.0189018,15.1128998
-			c1.2288971,1.0193005,1.6863976,2.4568005,1.6863976,4.0211945c0,1.5647049-0.4575005,3.0013046-1.6863976,4.0207043
-			c-0.9717026,0.8070011-2.1888008,1.0907001-3.4296036,1.0907001c-1.2416992,0-2.457798-0.283699-3.4295998-1.0907001
-			c-1.2297974-1.0193996-1.6872978-2.4559994-1.6872978-4.0207043c0-1.564394,0.4575005-3.001894,1.6872978-4.0211945
-			c0.9718018-0.8071003,2.1879005-1.0903006,3.4295998-1.0903006C58.830101,14.0225992,60.0471992,14.3057995,61.0189018,15.1128998
-			L61.0189018,15.1128998z M55.4315987,19.1431999c0,0.8701992,0.1281013,2.0588932,0.8838997,2.6271
-			c0.3661003,0.2754002,0.8218002,0.3641987,1.2737999,0.3641987c0.4502029,0,0.9068031-0.0887985,1.2737999-0.3641987
-			c0.755703-0.5682068,0.8839035-1.7569008,0.8839035-2.6271c0-0.5188999-0.0475998-1.0578003-0.1958008-1.5573997
-			c-0.1236-0.4182014-0.3568993-0.7636013-0.6863022-1.0500011c-0.358799-0.3125-0.8070984-0.4204998-1.2756004-0.4204998
-			c-0.4684982,0-0.9168968,0.1079998-1.2755966,0.4204998c-0.3294029,0.2863998-0.5637016,0.6317997-0.686203,1.0500011
-			C55.4791985,18.0853996,55.4315987,18.6243,55.4315987,19.1431999L55.4315987,19.1431999z M69.9478989,20.8360939v-6.532094
-			l0.3239975-0.0408001c0.3678055-0.0466003,0.7402039-0.0759001,1.1108017-0.0759001
-			c0.3715057,0,0.7430038,0.0292997,1.1109009,0.0759001l0.3238983,0.0408001v6.7937994
-			c0,0.4629002,0.0604019,1.1721001,0.4703064,1.4741001l0.2159958,0.1591949l-0.084198,0.2553043
-			c-0.1702042,0.5152016-0.5251999,0.8839016-1.0139008,1.1145l-0.1062012,0.0494003l-0.1151962-0.0200996
-			c-0.782402-0.1373005-1.4311066-0.4885998-1.8227997-1.1273003c-1.0742035,0.770401-2.2876053,1.1694012-3.6364059,1.1694012
-			c-0.9231949,0-1.8336945-0.2306004-2.4623947-0.9480019c-0.5865021-0.6697998-0.8125038-1.5024986-0.8125038-2.3818989v-4.3299999
-			c0-0.4538994-0.0503006-1.0348997-0.2984009-1.429306l-0.1847-0.2950001l0.2826004-0.2026939
-			c0.4311028-0.3084002,0.9325981-0.4347,1.4576988-0.4347c0.4274063,0,0.9508057,0.0607996,1.2583008,0.3916998
-			c0.2781982,0.2982006,0.3541031,0.7173004,0.3541031,1.1113005v4.7320995c0,0.3348999,0.030098,0.9041004,0.2378998,1.1858997
-			c0.1701965,0.2306004,0.5150986,0.2709007,0.7778015,0.2709007c0.4912949,0,0.9689941-0.1154003,1.4227982-0.3010998
-			C69.1884003,21.3640003,69.5893021,21.1296997,69.9478989,20.8360939L69.9478989,20.8360939z M81.0054016,23.184
-			c-0.8932037,0.7129002-1.9391022,1.0614986-3.1139984,1.0614986c-1.2471008,0-2.361702-0.3952999-3.1422043-1.4046001
-			c-0.8098984-1.0458984-1.0531998-2.3945999-1.0531998-3.6884995c0-1.3841,0.3559036-2.7073059,1.3634033-3.698699
-			c0.8911972-0.8775005,1.9673004-1.3401003,3.2210007-1.3401003c0.7593994,0,1.4978943,0.1629,2.2015991,0.4323997v-4.4018002
-			l0.3704987-0.3051996h0.9534988c0.4100037,0,0.888504,0.0663004,1.1812973,0.3843002
-			c0.2746048,0.2973995,0.3422012,0.7283993,0.3422012,1.1185999v9.7374992c0,0.4631004,0.0595016,1.1722012,0.4703979,1.4742012
-			l0.2196045,0.1618996l-0.0895996,0.2580986c-0.1813049,0.5234013-0.5363007,0.9068012-1.0431976,1.1309013l-0.1016006,0.044899
-			l-0.108902-0.0183048C81.9843979,24.0149002,81.4005966,23.7165985,81.0054016,23.184L81.0054016,23.184z M80.4820023,21.0464993
-			v-4.2220001c-0.5839005-0.3043003-1.2453995-0.544405-1.9034042-0.544405c-0.5866013,0-1.0348969,0.2420006-1.3908997,0.7049999
-			c-0.4684982,0.6079998-0.5782013,1.4874058-0.5782013,2.2313061c0,0.6926937,0.0841064,1.5967999,0.5142059,2.1714001
-			c0.3056946,0.4071999,0.6862946,0.6377983,1.2005005,0.6377983C79.1953964,22.0255985,79.8981018,21.6660004,80.4820023,21.0464993
-			L80.4820023,21.0464993z"/>
-		</g>
-	</svg>
-</div> -->
-<header>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4">
-				<a class="logo" href="/">
-					<img src="img/logo.png" alt="abm-cloud">
-				</a>
-				<div class="pnone-block">
-					<a href="tel://+380 (44) 207-39-55">+380 (44) 207-39-55</a>
-					<a href="tel://+380 (44) 207-39-55">+380 (44) 207-39-55</a>
-				</div>
-			</div>			
-			<div class="col-md-8 nav-wrap">
-				<nav class="right">
-					<ul>
-						<li><a href="/">Home</a></li>
-						<li><a href="/product.html">Product</a></li>
-						<li><a href="/advantages.html">Advantages</a></li>
-						<li><a href="/about.html">About</a></li>
-						<li><a href="/contacts.html">Contacts</a></li>
-					</ul>
-				</nav>
-				<div class="lang-switcher">
-					<span>en</span>
-					<ul>
-						<li><a href="#">en</a></li>
-						<li><a href="#">ru</a></li>
-						<li><a href="#">ua</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="fixed-nav">
-		<button class="side-menu">
-			<span></span>
-			<span></span>
-			enu
-		</button>
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/product.html">Product</a></li>
-			<li><a href="/advantages.html">Advantages</a></li>
-			<li><a href="/about.html">About</a></li>
-			<li><a href="/contacts.html">Contacts</a></li>
-			<li>
-				<ul class="soc-block">
-					<li>
-						<a href="#" target="_blank" rel="nofollow"><i class="fa fa-pinterest"></i></a>
-					</li>
-					<li>
-						<a href="#" target="_blank" rel="nofollow"><i class="fa fa-github"></i></a>
-					</li> 
-					<li>
-						<a href="#" target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
-					</li> 
-					<li>
-						<a href="#" target="_blank" rel="nofollow"><i class="fa fa-linkedin"></i></a>
-					</li> 
-					<li>
-						<a href="#" target="_blank" rel="nofollow"><i class="fa fa-vk"></i></a>
-					</li> 
-					<li>
-						<a href="#" target="_blank" rel="nofollow"><i class="fa fa-codepen"></i></a>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</div>
-</header>
-<main>
-	<section class="video">
-		<video autoplay="" loop="" muted poster="img/slider.jpg">
-			<source src="video/main.mp4" type="video/mp4">
-			<source src="design/video/The-Crosswalk.webm" type="video/webm">
-			<source src="design/video/The-Crosswalk.ogv" type="video/ogg">
-			<object>
-					<embed src="design/video/The-Crosswalk.mp4" type="application/x-shockwave-flash" allowfullscreen="false" allowscriptaccess="always">
-			</object>
-		</video>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="descr-block">
-						<h1 class="title-defoult mb2">Product name!</h1>
-						<p class="text mb3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti dolorum amet aliquid facere rem excepturi quos cupiditate commodi, inventore quam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti dolorum amet aliquid facere rem excepturi quos cupiditate commodi, inventore quam!</p>
-						<a href="#" class="btn">first button</a>
-						<button type="button" class="btn pop" data-show="popup-an">Связаться</button>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<!-- <div class="img-block">
-						<img src="img/chart.png" alt="alt">
-					</div> -->
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- <div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<button type='button' class="btn" id="test">Test click</button>				
-			</div>
-		</div>
-	</div>
- -->
-		<div class="presentation">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-7">
-						<div class="disc-product">
-							<div class="disc-item active" data-index="1" data-deg="0">
-								
-							</div>
-							<div class="disc-item" data-index="2" data-deg="-45">
-								
-							</div>
-							<div class="disc-item" data-index="3" data-deg="-90">
-								
-							</div>
-							<div class="disc-item" data-index="4" data-deg="-135">
-								
-							</div>
-							<div class="disc-item" data-index="5" data-deg="-180">
-								
-							</div>
-							<div class="disc-item" data-index="6" data-deg="-225">
-								
-							</div>
-							<div class="disc-item" data-index="7" data-deg="-270">
-								
-							</div>
-							<div class="disc-item" data-index="8" data-deg="-315">
-								
-							</div>
-						</div>						
-					</div>
-					<div class="col-md-5">
-						<div class="product-wrap">
-							<div class="product-item active" data-index="01">
-								<p class="text">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptatibus fuga doloremque suscipit, aperiam temporibus.
-									<a href="#">read more...</a>
-								</p>
-								<img src="img/advan1.png" alt="alt">
-								
-							</div>
-							<div class="product-item" data-index="02">
-								<p class="text">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptatibus fuga doloremque suscipit, aperiam temporibus.
-									<a href="#">read more...</a>
-								</p>
-								<img src="img/advan2.png" alt="alt">
-							</div>
-							<div class="product-item" data-index="03">
-								<p class="text">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptatibus fuga doloremque suscipit, aperiam temporibus.
-									<a href="#">read more...</a>
-								</p>
-								<img src="img/advan3.png" alt="alt">
-							</div>
-							<div class="product-item" data-index="04">
-								<p class="text">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptatibus fuga doloremque suscipit, aperiam temporibus.
-									<a href="#">read more...</a>
-								</p>
-								<img src="img/advan1.png" alt="alt">
-							</div>
-							<div class="product-item" data-index="05">
-								<p class="text">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptatibus fuga doloremque suscipit, aperiam temporibus.
-									<a href="#">read more...</a>
-								</p>
-								<img src="img/advan2.png" alt="alt">
-							</div>
-							<div class="product-item" data-index="06">
-								<p class="text">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptatibus fuga doloremque suscipit, aperiam temporibus.
-									<a href="#">read more...</a>
-								</p>
-								<img src="img/advan3.png" alt="alt">
-							</div>
-							<div class="product-item" data-index="07">
-								<p class="text">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptatibus fuga doloremque suscipit, aperiam temporibus.
-									<a href="#">read more...</a>
-								</p>
-								<img src="img/advan1.png" alt="alt">
-							</div>
-							<div class="product-item" data-index="08">
-								<p class="text">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptatibus fuga doloremque suscipit, aperiam temporibus.
-									<a href="#">read more...</a>
-								</p>
-								<img src="img/advan2.png" alt="alt">
-							</div>
-							
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	<section class="slider comment-wrap">		
-		<div class="item comment-item">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="user-photo">
-							<img src="img/girl.png" alt="alt">
-						</div>
-					</div>
-					<div class="col-sm-6 comment-content">
-						<p class="text">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores tempora nemo, sed reiciendis, assumenda placeat nesciunt laudantium itaque temporibus doloribus ipsam expedita at voluptates labore, a quos eius eligendi nostrum. Est dignissimos officia accusantium aliquid ullam earum, rem facilis labore.
-						</p>
-					</div>
-				</div>
-			</div>		
-		</div>
-		<div class="item comment-item">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="user-photo">
-							<img src="img/seampl1.jpg" alt="alt">
-						</div>
-					</div>
-					<div class="col-sm-6 comment-content">
-						<p class="text">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores tempora nemo, sed reiciendis, assumenda placeat nesciunt laudantium itaque temporibus doloribus ipsam expedita at voluptates labore, a quos eius eligendi nostrum. Est dignissimos officia accusantium aliquid ullam earum, rem facilis labore.
-						</p>
-					</div>
-				</div>
-			</div>		
-		</div>
-		<div class="item comment-item">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="user-photo">
-							<img src="img/seampl2.jpg" alt="alt">
-						</div>
-					</div>
-					<div class="col-sm-6 comment-content">
-						<p class="text">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores tempora nemo, sed reiciendis, assumenda placeat nesciunt laudantium itaque temporibus doloribus ipsam expedita at voluptates labore, a quos eius eligendi nostrum. Est dignissimos officia accusantium aliquid ullam earum, rem facilis labore.
-						</p>
-					</div>
-				</div>
-			</div>		
-		</div>
-	</section>
-
-	 <section class="card-blog">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div id="da-thumbs" data-packery="{&quot;itemSelector&quot;: &quot;.blog-grid&quot;,&quot;gutter&quot;: 10}" class="grid shema-blog da-thumbs">
-
-                <div class="blog-grid">
-                  <div class="site-screen">
-                    <div class="img_wrap">
-                    	<img src="img/client1.png" alt="alt">
-                    </div>
-                  </div>
-                  <div class="site-descr">
-                    <div class="descr-wrap"><span>tsumbaluk.in.ua || 28.12.2016</span>
-                      <h3 class="anim-title">Стартовая настройка Gulp</h3>
-	                      <a href="#" class="read-more">
-	                      	<i class="fa fa-long-arrow-right"></i>
-	                      </a>
-                    </div>
-                  </div>
+<html lang="ru" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>AbmCloud web page</title>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/vendor.min.css">
+    <link rel="stylesheet" href="css/header.min.css">
+    <link rel="stylesheet" href="css/main.min.css">
+  </head>
+  <body>
+    <div class="loader-wrap active">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 30" id="loader-logo">
+        <g>
+          <path fill="#009EE0" d="M64.6643982,3.6538c0.1556015,0.0581,0.3093033,0.1207998,0.459404,0.1870999 C65.9554977,2.9268,66.976799,2.198,68.1140976,1.7074c3.0727005-1.3254,6.6305008-0.7594,9.1396027,1.4546 c0.8984985,0.7923999,1.625,1.7668998,2.1302032,2.8552997c0.2388-0.0379996,0.479393-0.0653996,0.720993-0.0827999 c0.6580048-0.0461998,1.3268051-0.0183001,1.9967041,0.0905938c4.7106018,0.7649064,7.9225006,5.223,7.1575012,9.9333057 c-0.1611023,0.9924002-1.0268021,3.7594004-2.3334045,4.6533995c-0.1555939,0.1070995-0.2964935,0.1694012-0.4887009,0.2352009 c-0.3064957,0.1042995-1.8538971-0.8839054-2.0149002-1.7221012c0.7797012-0.8729,1.788002-2.2596989,2.0141068-3.6551991 c0.2624969-1.6210003-0.0083008-3.1408005-0.8978043-4.3757c-1.4914017-2.0698004-4.1697998-2.9652996-6.5955963-2.2070999 l-1.3104019,0.4095001l-0.387001-1.3186002c-0.3174973-1.0788999-0.938797-2.0465002-1.7798004-2.7891002 C73.7545013,3.6789,71.2764969,3.2835999,69.1810989,4.1876998c-1.0358963,0.447-1.9335022,1.1859002-2.5740967,2.1311002 l-0.7347031,1.0834999l-1.1054001-0.6905003c-4.0426979-2.1141996-8.2902985,1.2504001-8.2527008,5.3058996 c-1.4997978,1.2207003-3.2182999,0.1830006-3.2804985-0.3251991c-0.0036011-0.0298004-0.5289001-3.5669003,3.3242989-6.9581003 C58.9179993,3.0342,61.952301,2.6357,64.6643982,3.6538L64.6643982,3.6538z " class="cloud2"></path>
+          <path fill="#E2001A" d="M9.6299,21.4508991L8.4422998,21.468399H5.7811999l-1.1876998-0.0174999L3.543,24.1758995 c-0.2058001,0.0429993-0.4776001,0.0631943-0.8052001,0.0631943c-0.3330998,0-0.6605999-0.0366936-0.9845998-0.1134949 l-0.0567001-0.0795994l4.4123001-10.8301001c0.2600002-0.0438061,0.6368999-0.0670996,1.131-0.0670996 c0.4905,0,0.8464999,0.0232935,1.0688004,0.0670996L12.7062998,24.0625 c-0.2881994,0.1399002-0.6286001,0.2103996-1.0212002,0.2103996c-0.3970995,0-0.6770992-0.0603008-0.8399992-0.1774998 C10.684,23.9783001,10.5376997,23.7514,10.4076996,23.421093L9.6299,21.4508991L9.6299,21.4508991z M5.1004,20.1534996 l1.0286002-0.0174999h2.0056996c0.0237999,0,0.1666002,0.0037003,0.4254999,0.0100002 c0.2589998,0.0037003,0.4492998,0.0074997,0.5628004,0.0074997l-0.9516001-2.4844055 c-0.3889003-0.9712944-0.7247-1.9230003-1.0084-2.8508949H7.0448999c-0.2068,0.7677002-0.4537997,1.5090008-0.7420998,2.2268009	L5.1004,20.1534996L5.1004,20.1534996z M18.2954006,24.222599l-4.2220011-0.0466995L13.9398003,24.0625V13.3093996 l0.1335993-0.1103058l3.9869013-0.0502939c1.4026985,0,2.4558983,0.2538996,3.1613998,0.7612934 c0.7082996,0.5078068,1.0614986,1.2216063,1.0614986,2.1402054c0,0.5037003-0.174799,0.9613018-0.5142994,1.3785 c-0.3449993,0.4172955-0.794199,0.7115002-1.3542004,0.8817005c0.700901,0.1592007,1.2884007,0.4978008,1.7714996,1.0084 c0.4777012,0.5142994,0.7173004,1.1081009,0.7173004,1.7789001c0,0.9314003-0.3768997,1.6826992-1.1345997,2.2600994 C21.0067005,23.9352989,19.8519001,24.222599,18.2954006,24.222599L18.2954006,24.222599z M18.1783009,19.031599h-2.3141012 v3.9721012c0.5718012-0.0100002,1.2526999-0.013607,2.0423002-0.013607c0.7896996,0,1.3661003-0.062294,1.7304001-0.1866932 c0.3642006-0.1198997,0.6277008-0.2901001,0.7978992-0.5033054c0.3130016-0.3943958,0.4666004-0.8345947,0.4666004-1.3222942 c0-0.4840012-0.2103996-0.9314003-0.6322002-1.338707C19.8472996,19.2346992,19.1501007,19.031599,18.1783009,19.031599 L18.1783009,19.031599z M15.8641996,14.3839998v3.3984995h2.1192007c0.8556004,0,1.4548988-0.1665993,1.7999001-0.4972992 c0.344099-0.3303013,0.5142002-0.7312012,0.5142002-1.2014999c0-1.1223001-0.7576008-1.6827002-2.2729015-1.6827002 C17.0235004,14.401,16.3061008,14.3940935,15.8641996,14.3839998L15.8641996,14.3839998z M24.4116001,24.1420937 l1.0294991-10.9261942c0.3001003-0.0438061,0.7256012-0.0670996,1.2846012-0.0670996 c0.5590992,0,0.9808998,0.0232935,1.2646999,0.0670996L29.9347992,18.3736 c0.1061001,0.2470989,0.2480011,0.6744938,0.4300003,1.2819996c0.1776009,0.6112003,0.2919998,1.0147991,0.3276005,1.2189007 h0.1180992c0.1299-0.6753006,0.3889008-1.5062008,0.7786999-2.5009003l1.9244003-5.1577005 c0.3239021-0.0438061,0.7530022-0.0670996,1.2847023-0.0670996c0.5297966,0,0.9524994,0.0232935,1.2635994,0.0670996 l1.0293999,10.9261942c-0.2717018,0.0632057-0.5828018,0.0970001-0.9397011,0.0970001 c-0.3568001,0-0.6607018-0.020195-0.9076996-0.0631943l-0.4868011-6.0429001 c-0.0887985-1.2045994-0.1409988-2.2734995-0.153698-3.2045002h-0.1170998l-2.7434006,7.5482006 c-0.2716999,0.0429993-0.6039009,0.0630989-1.0010014,0.0630989c-0.3934994,0-0.7173996-0.0200996-0.9608002-0.0630989 l-2.7633991-7.5482006h-0.1172009c-0.0768986,1.8393002-0.1299,2.9075012-0.1536999,3.2045002l-0.4666996,6.0429001 c-0.2598991,0.0429993-0.5709991,0.0631943-0.9361,0.0631943C24.9834995,24.2390938,24.6714993,24.2052994,24.4116001,24.1420937 L24.4116001,24.1420937z " class="abm"></path>
+          <path fill-rule="evenodd" clip-rule="evenodd" fill="#009EE0" d="M44.6002007,18.046999c0-0.0604,0-0.1217995,0-0.1829987 c0-1.1640015-0.4877014-1.7304001-1.669899-1.7304001c-0.6021004,0-1.0688019,0.2213993-1.4147034,0.7182999 c-0.4473991,0.6432991-0.5435982,1.5848999-0.5435982,2.3461933c0,0.8208065,0.1282005,1.8850002,0.8181,2.4358063 c0.3917007,0.3139,0.894001,0.4090996,1.3835983,0.4090996c0.8748016,0,1.8063011-0.4493008,2.5346031-0.8959045 l0.1702995-0.1041946L46.0597,21.1288986c0.2728004,0.1281013,0.5051003,0.3220005,0.7000008,0.5508003 c0.1857986,0.2159004,0.3449974,0.462101,0.428299,0.7357006l0.0723,0.2360992l-0.1912994,0.1573009 c-1.2005005,0.9892006-2.6096992,1.4366989-4.1605988,1.4366989c-1.398201,0-2.759903-0.3604984-3.6877022-1.4658985 c-0.894001-1.0643005-1.2070007-2.3993015-1.2070007-3.7645073c0-1.4064941,0.392601-2.7144928,1.4513016-3.6802931 c0.9818001-0.8963003,2.1623001-1.3122005,3.4872017-1.3122005c1.1199989,0,2.2994995,0.210495,3.1934967,0.9314947 c0.6753006,0.5454054,1.1914024,1.2546062,1.1914024,2.1522064c0,0.9259987-0.5837021,1.3835983-1.4796028,1.3835983 c-0.3183975,0-0.6450996-0.0183983-0.9579964-0.0786991l-0.2993011-0.0585995V18.046999L44.6002007,18.046999z M51.2901993,21.934 h1.1071014l0.0970001,0.2196999c0.1226997,0.2763004,0.2086983,0.5764999,0.2086983,0.8810997 c0,0.2059994-0.0109978,0.4200993-0.0513,0.6213989l-0.0512009,0.2562008l-0.2589989,0.0366001 c-0.6268005,0.0905991-1.2599983,0.1317997-1.8931999,0.1317997c-1.4403,0-2.4778976-0.6185989-2.4778976-2.1604004V10.1441994 l0.3714981-0.3051996h0.9305c0.4054985,0,0.8830986,0.0621996,1.1777,0.3705997 c0.2818985,0.2955999,0.3459015,0.7403002,0.3459015,1.1323004v10.1584988	C50.7960014,21.8507996,50.9514999,21.934,51.2901993,21.934L51.2901993,21.934z M61.0189018,15.1128998 c1.2288971,1.0193005,1.6863976,2.4568005,1.6863976,4.0211945c0,1.5647049-0.4575005,3.0013046-1.6863976,4.0207043 c-0.9717026,0.8070011-2.1888008,1.0907001-3.4296036,1.0907001c-1.2416992,0-2.457798-0.283699-3.4295998-1.0907001 c-1.2297974-1.0193996-1.6872978-2.4559994-1.6872978-4.0207043c0-1.564394,0.4575005-3.001894,1.6872978-4.0211945 c0.9718018-0.8071003,2.1879005-1.0903006,3.4295998-1.0903006C58.830101,14.0225992,60.0471992,14.3057995,61.0189018,15.1128998	L61.0189018,15.1128998z M55.4315987,19.1431999c0,0.8701992,0.1281013,2.0588932,0.8838997,2.6271 c0.3661003,0.2754002,0.8218002,0.3641987,1.2737999,0.3641987c0.4502029,0,0.9068031-0.0887985,1.2737999-0.3641987 c0.755703-0.5682068,0.8839035-1.7569008,0.8839035-2.6271c0-0.5188999-0.0475998-1.0578003-0.1958008-1.5573997 c-0.1236-0.4182014-0.3568993-0.7636013-0.6863022-1.0500011c-0.358799-0.3125-0.8070984-0.4204998-1.2756004-0.4204998 c-0.4684982,0-0.9168968,0.1079998-1.2755966,0.4204998c-0.3294029,0.2863998-0.5637016,0.6317997-0.686203,1.0500011 C55.4791985,18.0853996,55.4315987,18.6243,55.4315987,19.1431999L55.4315987,19.1431999z M69.9478989,20.8360939v-6.532094 l0.3239975-0.0408001c0.3678055-0.0466003,0.7402039-0.0759001,1.1108017-0.0759001 c0.3715057,0,0.7430038,0.0292997,1.1109009,0.0759001l0.3238983,0.0408001v6.7937994 c0,0.4629002,0.0604019,1.1721001,0.4703064,1.4741001l0.2159958,0.1591949l-0.084198,0.2553043 c-0.1702042,0.5152016-0.5251999,0.8839016-1.0139008,1.1145l-0.1062012,0.0494003l-0.1151962-0.0200996 c-0.782402-0.1373005-1.4311066-0.4885998-1.8227997-1.1273003c-1.0742035,0.770401-2.2876053,1.1694012-3.6364059,1.1694012 c-0.9231949,0-1.8336945-0.2306004-2.4623947-0.9480019c-0.5865021-0.6697998-0.8125038-1.5024986-0.8125038-2.3818989v-4.3299999 c0-0.4538994-0.0503006-1.0348997-0.2984009-1.429306l-0.1847-0.2950001l0.2826004-0.2026939 c0.4311028-0.3084002,0.9325981-0.4347,1.4576988-0.4347c0.4274063,0,0.9508057,0.0607996,1.2583008,0.3916998 c0.2781982,0.2982006,0.3541031,0.7173004,0.3541031,1.1113005v4.7320995c0,0.3348999,0.030098,0.9041004,0.2378998,1.1858997 c0.1701965,0.2306004,0.5150986,0.2709007,0.7778015,0.2709007c0.4912949,0,0.9689941-0.1154003,1.4227982-0.3010998 C69.1884003,21.3640003,69.5893021,21.1296997,69.9478989,20.8360939L69.9478989,20.8360939z M81.0054016,23.184 c-0.8932037,0.7129002-1.9391022,1.0614986-3.1139984,1.0614986c-1.2471008,0-2.361702-0.3952999-3.1422043-1.4046001 c-0.8098984-1.0458984-1.0531998-2.3945999-1.0531998-3.6884995c0-1.3841,0.3559036-2.7073059,1.3634033-3.698699 c0.8911972-0.8775005,1.9673004-1.3401003,3.2210007-1.3401003c0.7593994,0,1.4978943,0.1629,2.2015991,0.4323997v-4.4018002 l0.3704987-0.3051996h0.9534988c0.4100037,0,0.888504,0.0663004,1.1812973,0.3843002 c0.2746048,0.2973995,0.3422012,0.7283993,0.3422012,1.1185999v9.7374992c0,0.4631004,0.0595016,1.1722012,0.4703979,1.4742012 l0.2196045,0.1618996l-0.0895996,0.2580986c-0.1813049,0.5234013-0.5363007,0.9068012-1.0431976,1.1309013l-0.1016006,0.044899 l-0.108902-0.0183048C81.9843979,24.0149002,81.4005966,23.7165985,81.0054016,23.184L81.0054016,23.184z M80.4820023,21.0464993 v-4.2220001c-0.5839005-0.3043003-1.2453995-0.544405-1.9034042-0.544405c-0.5866013,0-1.0348969,0.2420006-1.3908997,0.7049999 c-0.4684982,0.6079998-0.5782013,1.4874058-0.5782013,2.2313061c0,0.6926937,0.0841064,1.5967999,0.5142059,2.1714001 c0.3056946,0.4071999,0.6862946,0.6377983,1.2005005,0.6377983C79.1953964,22.0255985,79.8981018,21.6660004,80.4820023,21.0464993 L80.4820023,21.0464993z" class="cloud"></path>
+        </g>
+      </svg>
+    </div>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-12"><a href="/" class="logo"><img src="img/logo.png" alt="abm-cloud"></a>
+            <div class="pnone-block"><a href="tel://+380 (44) 207-39-55">+380 (44) 207-39-67</a><a href="tel://+380 (44) 207-39-55">+380 (44) 207-39-55</a></div>
+          </div>
+          <div class="col-md-8 col-sm-12 nav-wrap">
+            <nav class="right">
+              <ul>
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="advantages.html">Advantages</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+              </ul>
+            </nav>
+            <div class="lang-switcher"><span>en</span>
+              <ul>
+                <li><a href="#">en</a></li>
+                <li><a href="#">ru</a></li>
+                <li><a href="#">ua</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fixed-nav">
+        <button class="side-menu"><span></span><span></span>enu</button>
+        <div class="mob-button"><span></span><span></span><span></span></div>
+        <ul>
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="advantages.html">Advantages</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contacts.html">Contacts</a></li>
+          <li>
+            <ul class="soc-block">
+              <li><a href="#" target="_blank" rel="nofollow"><i class="fa fa-pinterest"></i></a></li>
+              <li><a href="#" target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#" target="_blank" rel="nofollow"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="#" target="_blank" rel="nofollow"><i class="fa fa-vk"></i></a></li>
+              <li><a href="#" target="_blank" rel="nofollow"><i class="fa fa-github"></i></a></li>
+              <li><a href="#" target="_blank" rel="nofollow"><i class="fa fa-codepen"></i></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <section class="video">
+        <div class="video-wrap">
+          <video autoplay="" loop="" muted poster="img/slider.jpg">
+            <source src="video/main.mp4" type="video/mp4">
+            <source src="design/video/The-Crosswalk.webm" type="video/webm">
+            <source src="design/video/The-Crosswalk.ogv" type="video/ogg">
+            <object>
+              <embed src="design/video/The-Crosswalk.mp4" type="application/x-shockwave-flash" allowfullscreen="false" allowscriptaccess="always">
+            </object>
+          </video>
+          <div class="hills-wrap"><img src="img/home-section.png" alt="alt" class="hills"></div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="descr-block">
+                  <h1 class="title-defoult mb2">Product name!</h1>
+                  <p class="text mb3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti dolorum amet aliquid facere rem excepturi quos cupiditate commodi, inventore quam! Lorem ipsum dolor sit amet!</p><a href="#" class="btn">first button</a>
+                  <button type="button" data-show="popup-an" class="btn pop">Связаться</button>
                 </div>
-
-              	<div class="blog-grid">
-                  <div class="site-screen">
-                    <div class="img_wrap">
-                    	<img src="img/client2.png" alt="alt">
-                    </div>
-                  </div>
-                  <div class="site-descr">
-                    <div class="descr-wrap"><span>tsumbaluk.in.ua || 28.12.2016</span>
-                      <h3 class="anim-title">Стартовая настройка Gulp</h3>
-	                      <a href="#" class="read-more">
-	                      	<i class="fa fa-long-arrow-right"></i>
-	                      </a>
-                    </div>
-                  </div>
-                </div>
-
-								<div class="blog-grid">
-                  <div class="site-screen">
-                    <div class="img_wrap">
-                    	<img src="img/client3.png" alt="alt">
-                    </div>
-                  </div>
-                  <div class="site-descr">
-                    <div class="descr-wrap"><span>tsumbaluk.in.ua || 28.12.2016</span>
-                      <h3 class="anim-title">Стартовая настройка Gulp</h3>
-	                      <a href="#" class="read-more">
-	                      	<i class="fa fa-long-arrow-right"></i>
-	                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="blog-grid">
-                  <div class="site-screen">
-                    <div class="img_wrap">
-                    	<img src="img/client4.png" alt="alt">
-                    </div>
-                  </div>
-                  <div class="site-descr">
-                    <div class="descr-wrap"><span>tsumbaluk.in.ua || 28.12.2016</span>
-                      <h3 class="anim-title">Стартовая настройка Gulp</h3>
-	                      <a href="#" class="read-more">
-	                      	<i class="fa fa-long-arrow-right"></i>
-	                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="blog-grid">
-                  <div class="site-screen">
-                    <div class="img_wrap">
-                    	<img src="img/client5.png" alt="alt">
-                    </div>
-                  </div>
-                  <div class="site-descr">
-                    <div class="descr-wrap"><span>tsumbaluk.in.ua || 28.12.2016</span>
-                      <h3 class="anim-title">Стартовая настройка Gulp</h3>
-	                      <a href="#" class="read-more">
-	                      	<i class="fa fa-long-arrow-right"></i>
-	                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="blog-grid">
-                  <div class="site-screen">
-                    <div class="img_wrap">
-                    	<img src="img/client6.png" alt="alt">
-                    </div>
-                  </div>
-                  <div class="site-descr">
-                    <div class="descr-wrap"><span>tsumbaluk.in.ua || 28.12.2016</span>
-                      <h3 class="anim-title">Стартовая настройка Gulp</h3>
-	                      <a href="#" class="read-more">
-	                      	<i class="fa fa-long-arrow-right"></i>
-	                      </a>
-                    </div>
-                  </div>
-                </div>
-
               </div>
             </div>
           </div>
         </div>
       </section>
-</main>
-
-<footer>
-	<div class="copy">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-					© <a href="http://tsumbaluk.in.ua">tsumbaluk.in.ua</a>
-				</div>
-				<div class="col-md-4 center">
-					<a href="sitemap.xml"><i class="fa fa-sitemap"></i> Sitemap</a>
-				</div>
-				<div class="col-md-4">
-					<div class="dev">
-						<a href="http://tsumbaluk.in.ua/" target="_blank" rel="nofollow">
-							Developed by
-							<span>Alexander Tsymbalyuk</span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
-
-	<!--[if lt IE 9]>
-	<script src="libs/html5shiv/es5-shim.min.js"></script>
-	<script src="libs/html5shiv/html5shiv.min.js"></script>
-	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
-	<script src="libs/respond/respond.min.js"></script>
-	<![endif]-->
-
-	<!-- Load Scripts Start -->
-	<script src="js/jquery-2.2.0.min.js"></script>
-	<script src="js/plagin.min.js"></script>
-	<script src="js/common.min.js"></script>
-	<!-- Load Scripts End -->
-</body>
+      <section class="tabs-wrap">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <ul class="tabs">
+                <li>
+                  <button type="button" data-index="0" class="tab-title active">Valuable</button>
+                </li>
+                <li>
+                  <button type="button" data-index="1" class="tab-title">Effective</button>
+                </li>
+                <li>
+                  <button type="button" data-index="2" class="tab-title">Real-time</button>
+                </li>
+                <li>
+                  <button type="button" data-index="3" class="tab-title">Integrated</button>
+                </li>
+                <li>
+                  <button type="button" data-index="4" class="tab-title">Accurate</button>
+                </li>
+                <li>
+                  <button type="button" data-index="5" class="tab-title">Analytical</button>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-8">
+              <div class="contentent-wrap right"><img src="img/monitor.png" alt="alt" class="monitor">
+                <div class="content-item"><img src="img/tab1.png" alt="alt" class="active"><img src="img/tab2.png" alt="alt"><img src="img/tab3.png" alt="alt"><img src="img/tab1.png" alt="alt"><img src="img/tab2.png" alt="alt"><img src="img/tab3.png" alt="alt"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="diagonal-gradient">
+        <div class="cont-wrap">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6"><img src="img/bubble_chat.png" alt="alt"></div>
+              <div class="col-sm-6">
+                <div class="content">
+                  <h3 class="title-defoult mb3">Lorem ipsum dolor sit amet, consectetur.</h3>
+                  <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cont-wrap">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="content">
+                  <h3 class="title-defoult mb3">Lorem ipsum dolor sit amet, consectetur.</h3>
+                  <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-6"><img src="img/bubble_chat1.png" alt="alt"></div>
+            </div>
+          </div>
+        </div>
+        <div class="cont-wrap">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6"><img src="img/bubble_chat3.png" alt="alt"></div>
+              <div class="col-sm-6">
+                <div class="content">
+                  <h3 class="title-defoult mb3">Lorem ipsum dolor sit amet, consectetur.</h3>
+                  <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="title-section mb2 mt3">Отзывы наших клиентов</h2>
+              <div class="slider slider-custom comment-wrap">
+                <div class="item comment-item">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="user-photo"><img src="img/girl.png" alt="alt"></div>
+                      </div>
+                      <div class="col-sm-6 comment-content">
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores tempora nemo, sed reiciendis, assumenda placeat nesciunt laudantium itaque temporibus doloribus ipsam expedita at voluptates labore, a quos eius eligendi nostrum. Est dignissimos officia accusantium aliquid ullam earum, rem facilis labore.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item comment-item">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="user-photo"><img src="img/seampl1.jpg" alt="alt"></div>
+                      </div>
+                      <div class="col-sm-6 comment-content">
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores tempora nemo, sed reiciendis, assumenda placeat nesciunt laudantium itaque temporibus doloribus ipsam expedita at voluptates labore, a quos eius eligendi nostrum. Est dignissimos officia accusantium aliquid ullam earum, rem facilis labore.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item comment-item">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="user-photo"><img src="img/seampl2.jpg" alt="alt"></div>
+                      </div>
+                      <div class="col-sm-6 comment-content">
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores tempora nemo, sed reiciendis, assumenda placeat nesciunt laudantium itaque temporibus doloribus ipsam expedita at voluptates labore, a quos eius eligendi nostrum. Est dignissimos officia accusantium aliquid ullam earum, rem facilis labore.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="send-section">
+        <h3 class="text-variant">Подпишитесь на рассылку, <span>и получайте новости от ABMCloud</span></h3>
+        <form action="action" class="style">
+          <input type="email" placeholder="Введите ваш E-mail" required>
+          <button type="submit" class="btn">подписаться</button>
+        </form>
+      </section>
+    </main>
+    <div id="popup-an" class="popup">
+      <div class="popup-content anim">
+        <form class="style">
+          <div class="form-group">
+            <input type="text" name="form-text" id="form-text">
+            <label for="form-text">Name</label>
+          </div>
+          <div class="form-group">
+            <input type="text" name="email" id="email" required>
+            <label for="email">E-mail</label>
+          </div>
+          <div class="form-group">
+            <textarea name="form-textarea" id="form-textarea"></textarea>
+            <label for="form-textarea">Description</label>
+          </div>
+          <button type="submit" class="btn full">Submit</button>
+          <input type="hidden" name="project_name" value="Имя сайта">
+          <input type="hidden" name="admin_email" value="tsumbaluk888@gmail.com">
+          <input type="hidden" name="form_subject" value="Заявка с имя сайта">
+        </form>
+      </div>
+    </div>
+    <footer>
+      <div class="copy">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">©<a href="http://tsumbaluk.in.ua">tsumbaluk.in.ua</a></div>
+            <div class="col-md-4 center"><a href="sitemap.xml"><i class="fa fa-sitemap"></i>Sitemap</a></div>
+            <div class="col-md-4">
+              <div class="dev"><a href="http://tsumbaluk.in.ua/" target="_blank" rel="nofollow">Developed by<span>Alexander Tsymbalyuk</span></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--[if lt IE 9]
+    <script src="libs/html5shiv/es5-shim.min.js"></script>
+    <script src="libs/html5shiv/html5shiv.min.js"></script>
+    <script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+    <script src="libs/respond/respond.min.js"></script>
+    -->
+    <!--![endif]-->
+    <script src="js/jquery-2.2.0.min.js"></script>
+    <script src="js/plagin.min.js"></script>
+    <script src="js/common.min.js"></script>
+  </body>
 </html>

@@ -1,0 +1,16 @@
+div#popup-an.popup
+	div.popup-content.anim
+		form.style
+			div.form-group
+				input(type="text" name="form-text" id="form-text")
+				label(for="form-text") Name
+			div.form-group
+				input(type="text" name="email" id="email" required)
+				label(for="email") E-mail
+			div.form-group
+				textarea(name="form-textarea" id="form-textarea")
+				label(for="form-textarea") Description
+			button(type="submit" class="btn full") Submit
+			input(type="hidden" name="project_name" value="Имя сайта")
+			input(type="hidden" name="admin_email" value="tsumbaluk888@gmail.com")
+			input(type="hidden" name="form_subject" value="Заявка с имя сайта")

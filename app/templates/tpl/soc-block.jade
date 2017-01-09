@@ -1,0 +1,14 @@
+ul.soc-block
+	-
+		var social = {
+			1:'fa fa-pinterest',
+			2:'fa fa-facebook',
+			3:'fa fa-linkedin',
+			4:'fa fa-vk',
+			5:'fa fa-github',
+			6:'fa fa-codepen'
+		};		
+	each val, index in social
+		li
+			a(href="#" target="_blank" rel="nofollow")
+				i(class=val)

@@ -1,0 +1,35 @@
+header
+	div.container
+		div.row
+			div.col-md-4.col-sm-12
+				a.logo(href="/")
+					img(src="img/logo.png" alt="abm-cloud")
+				div.pnone-block
+					a(href="tel://+380 (44) 207-39-55") +380 (44) 207-39-67
+					a(href="tel://+380 (44) 207-39-55") +380 (44) 207-39-55
+			div.col-md-8.col-sm-12.nav-wrap
+				nav.right
+					ul
+						include ../tpl/navigation
+				div.lang-switcher
+					span en
+					ul
+						li
+							a(href="#") en
+						li
+							a(href="#") ru
+						li
+							a(href="#") ua
+	div.fixed-nav
+		button.side-menu
+			span
+			span
+			| enu
+		div.mob-button
+			span
+			span
+			span
+		ul
+			include ../tpl/navigation
+			li
+				include ../tpl/soc-block

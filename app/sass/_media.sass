@@ -1,75 +1,108 @@
 @import "bourbon"
 
-/*==========  Desktop First Method  ==========*/
+@media only screen and (max-width : 1346px)
+	section.video:before,.tabs-wrap:before
+		display: none
+	section.video 
+		.video-wrap 
+			.descr-block
+				background-color: transparent
 
-/* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px)
-	/**/
+@media only screen and (max-width : 1201px)
+	header 
+		.logo
+			width: 120px
+			margin-top: 3px
+			img
+				width: 120px
+		.pnone-block 
+			a
+				font-size: 12px
 
+	.title-defoult, .title-section
+		font-size: 32px!important
+		section.video 
+	.video-wrap 
+		.descr-block
+			.btn
+				min-width: 125px
+				vertical-align: top
 
-/* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
+	header 
+		.col-sm-12
+			text-align: center
+			.logo
+				margin: 5px 0
+			.pnone-block 
+				vertical-align: super
+		.nav-wrap
+			display: none
+		.fixed-nav
+			&:before
+				border-width: 85px 85px 0 0
+			.side-menu
+				display: none!important
+			.mob-button
+				display: block
+	.tabs-wrap 
+		.tabs
+			margin: 0!important
+			padding: 20px 30px
+			li
+				button.active
+					background-color: $main
+					color: $white
+					&:before
+						display: none
+		.contentent-wrap
+			text-align: center
+			.content-item
+				right: 50%
+				@include transform(translateX(50%))
+			
 
 
-/* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-	
-	/*Disable Animation on Mobile Devices*/
-	.animated
-		/*CSS transitions*/
+	.animated		
 		-o-transition-property: none !important
 		-moz-transition-property: none !important
 		-ms-transition-property: none !important
 		-webkit-transition-property: none !important
-		transition-property: none !important
-		/*CSS transforms*/
+		transition-property: none !important		
 		-o-transform: none !important
 		-moz-transform: none !important
 		-ms-transform: none !important
 		-webkit-transform: none !important
 		transform: none !important
-		/*CSS animations*/
 		-webkit-animation: none !important
 		-moz-animation: none !important
 		-o-animation: none !important
 		-ms-animation: none !important
 		animation: none !important
+	section.video 
+		.video-wrap 
+			.hills-wrap 
+				img.hills
+					top: initial
+					bottom: 0
+					width: 400px
+			.descr-block
+				left: 50px
 
 
-/* Extra Small Devices, Phones */
-@media only screen and (max-width : 480px)
-	/**/
+// @media only screen and (max-width : 480px)
 
+// @media only screen and (max-width : 320px)
 
-/* Custom, iPhone Retina */
-@media only screen and (max-width : 320px)
-	/**/
+// @media only screen and (min-width : 320px)
 
+// @media only screen and (min-width : 480px)
 
-/*==========  Mobile First Method  ==========*/
+// @media only screen and (min-width : 768px)
 
-/* Custom, iPhone Retina */
-@media only screen and (min-width : 320px)
-	/**/
+// @media only screen and (min-width : 992px)
 
-
-/* Extra Small Devices, Phones */
-@media only screen and (min-width : 480px)
-	/**/
-
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px)
-	/**/
-
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px)
-	/**/
-
-
-/* Large Devices, Wide Screens */
 @media only screen and (min-width : 1367px)
 	.disc-product
 		.disc-item
@@ -78,5 +111,3 @@
 					border-width: 1140px 340px 0!important
 					bottom: 0px!important
 					left: -202px!important
-	/**/
-
