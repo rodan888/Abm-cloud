@@ -26,8 +26,9 @@ $(function() {
 			}
 		},
 		menuAnim: function(){
-			$('button.side-menu, .mob-button').on('click', function(){
-				$(this).toggleClass('active').next().toggleClass('active');
+			$('.side-menu, .mob-button').on('click', function(){
+				$(this).toggleClass('active');
+				$('.stick-menu').toggleClass('active');
 			});
 		},
 		langSwitcher: function(){
