@@ -326,6 +326,8 @@ section.video
 		top: 36%
 		left: 50%
 		@include transform(translate(-50%,-50%))
+		&.succes-text
+			top: 64%
 
 .contacts
 	form
@@ -616,6 +618,7 @@ section.main-triangle
 	min-height: 450px
 	padding: 20px 0
 	position: relative
+	margin-bottom: 220px
 	&:before
 		position: absolute
 		content: ''
@@ -635,9 +638,13 @@ section.main-triangle
 		.btn
 			color: $white
 			border-color: $white
-	.col-md-6
+	.col-md-6, .col-md-12
 		position: relative
 		min-height: 450px
+	.col-md-12
+		.descr-block
+			p
+				max-width: 100%		
 	img
 		width: 100%
 	.descr-block
@@ -664,6 +671,15 @@ section.main-triangle
 		right: 0
 		width: auto
 		@include transform(rotate(-4.8deg))
+	.slider
+		.owl-controls
+			.owl-pagination
+				display: none
+			.owl-buttons 
+				.owl-prev
+					left: 35px
+				.owl-next
+					right: 35px
 
 .animation-arrow
 	position: absolute
@@ -710,18 +726,60 @@ section.main-triangle
 		top: 95%
 
 
+section.fast-order-small
+	background-color: $main
+	padding: 8px 0
+	.row
+		border-top: 1px solid $white
+		border-bottom: 1px solid $white
+	.title-block,.button-block
+		position: relative
+		min-height: 220px
+		color: $white
+		i
+			position: absolute
+			font-size: 80px
+			width: 85px
+			height: 85px
+			top: 50%
+			left: 0
+			margin-top: -42px
+		.title-defoult
+			position: absolute
+			left: 90px
+			top: 50%
+			font-size: 22px
+			@include transform(translateY(-50%))
+		.btn
+			position: absolute
+			left: 50%
+			top: 50%
+			background-color: $white
+			color: $main
+			border-radius: 50px
+			min-width: 260px
+			height: 60px
+			@include transform(translate(-50%,-50%))
+			&:hover
+				background-color: transparent
+				border-color: $white
+				color: $white
+
+
+
+
 section.advan
 	min-height: 600px
 	background-color: #fafdff
 	background-image: url("../img/grid.png")
 	background-repeat: repeat
-	padding-top: 190px
+	padding-top: 90px
 	padding-bottom: 1px
 	.percent-info
 		position: relative
 		z-index: 10
 		max-width: 800px
-		margin: 0 auto 65px
+		margin: 0 auto 55px
 		&:after
 			position: absolute
 			content: ''
@@ -741,7 +799,7 @@ section.advan
 				text-align: right
 		.percent
 			color: $blackLight
-			font-size: 160px
+			font-size: 130px
 			position: relative
 			&:before
 				position: absolute
@@ -749,12 +807,31 @@ section.advan
 				left: 175px
 				top: -10px
 				z-index: -1
-				font-size: 190px
+				font-size: 135px
 				line-height: 190px
 				color: $blackLight
 		img
 			width: 100%
-			max-width: 300px	
+			max-width: 220px
+			margin-top: 135px
+
+section.more-info
+	margin: 65px 0
+	.item
+		text-align: center
+		.img-wraper
+			min-height: 200px
+			position: relative
+			margin: 25px 0
+			img
+				position: absolute
+				top: 50%
+				left: 50%
+				max-width: 250px
+				height: auto
+				@include transform(translate(-50%,-50%))
+		.cut-btn
+			background-color: transparent
 
 .extend-form
 	padding: 30px 0
@@ -1020,6 +1097,7 @@ footer
 					bottom: 0
 					right: 40px
 .slider-custom
+	z-index: 10
 	.owl-next,.owl-prev
 		font-size: 44px!important
 		line-height: 30px

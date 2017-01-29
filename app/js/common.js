@@ -123,11 +123,11 @@ $(function() {
 	};
 
 	//E-mail Ajax Send
-	$("form").submit(function() { 
+	$("form.send-form").submit(function() { 
 		var th = $(this);
 		$.ajax({
 			type: "POST",
-			url: "mail.php",
+			url: th.action,
 			data: th.serialize()
 		}).done(function() {
 			alert("Thank you!");
