@@ -619,6 +619,7 @@ section.main-triangle
 	padding: 20px 0
 	position: relative
 	margin-bottom: 220px
+	z-index: 10
 	&:before
 		position: absolute
 		content: ''
@@ -729,6 +730,8 @@ section.main-triangle
 section.fast-order-small
 	background-color: $main
 	padding: 8px 0
+	z-index: 10
+	position: relative
 	.row
 		border-top: 1px solid $white
 		border-bottom: 1px solid $white
@@ -1341,6 +1344,38 @@ footer
 		margin-top: 40px
 		margin-left: 125px
 		padding: 20px 0
+		&.index
+			z-index: 1
+			margin-top: 0
+			margin-bottom: 60px
+			&:before
+				height: 100vh
+				top: -15vh				
+			li
+				position: relative
+				background-color: transparent
+				display: block
+				width: 100%
+				font-size: 16px
+				cursor: pointer
+				padding: 10px 20px
+				border-bottom: 1px solid #ebebeb
+				margin-bottom: 5px
+				background-color: $white
+				@include transition(padding 0.3s)
+				&:first-child				
+					border-top: 1px solid #ebebeb
+				&:hover
+					padding-left: 35px
+				&.active
+					&:before
+						position: absolute
+						content: ''
+						top: 50%					
+						right: -25%
+						width: 50%
+						height: 1px
+						background-color: $main
 		&:before
 			position: absolute
 			content: ''
@@ -1355,7 +1390,7 @@ footer
 			background-color: $white
 			&:first-child
 				button
-					border-top: 1px solid #ebebeb			
+					border-top: 1px solid #ebebeb
 			button
 				position: relative
 				background-color: transparent
@@ -1392,6 +1427,148 @@ footer
 				@include transition(width 0.6s)
 				&.active
 					width: 100%
+	.tab
+		padding-left: 50px
+		position: relative
+		&:before
+			position: absolute
+			content: attr(data-index)
+			bottom: -70px
+			right: -50px
+			width: auto
+			font-size: 290px
+			font-family: 'OpenSansBold'
+			color: $main
+			opacity: .2
+			height: 290px
+			line-height: 290px
+		h2
+			margin-top: -20px
+			margin-bottom: 20px
+			font-size: 32px
+			position: relative
+			display: inline-block
+			&:before
+				position: absolute
+				content: ''
+				bottom: 2px
+				right: -26px
+				width: 20px
+				height: 5px
+				background-color: $main
+		ul,ol
+			margin: 20px 0
+			li
+				list-style-type: circle
+				list-style-position: inside
+		p
+			margin-bottom: 10px
+
+.cases
+	.case-wrap
+		max-width: 870px
+		margin: 0 auto
+	.case-item	
+		min-height: 170px
+		position: relative
+		&:nth-child(odd)
+			padding-left: 115px
+			.button-wrap
+				text-align: right
+			.case
+				left: 0
+		&:nth-child(even)
+			padding-right: 115px
+			.button-wrap
+				text-align: left
+			.case
+				right: 0
+		h3		
+			position: relative
+			display: inline-block
+			&:before
+				position: absolute
+				content: ''
+				bottom: 8px
+				right: -26px
+				width: 20px
+				height: 3px
+				background-color: $main
+	.case
+		position: absolute
+		top: 0
+		margin-left: -85px
+		width: 160px
+		height: 160px
+		-webkit-transform-style: preserve-3d
+		transform-style: preserve-3d
+		-webkit-backface-visibility: hidden
+		backface-visibility: hidden
+		img
+			position: absolute
+			&:nth-child(1)
+				transform: translateZ(32px)	
+				max-width: 140px
+				left: 17px
+				top: 16px
+			&:nth-child(2)
+				transform: translateZ(58px)	
+				max-width: 90px
+				left: 45px
+				top: 38px
+
+.clients-list
+	margin-top: 60px
+ .client-item
+		position: relative
+		margin: 15px
+		overflow: hidden	
+		display: inline-block
+		width: 190px
+		height: 190px
+		border-radius: 50%
+		-webkit-border-radius: 50%	
+		padding: 1px
+		box-shadow: 0px 13px 30px #DDDDDD
+		cursor: pointer
+		&:before
+			width: 100%
+			height: 100%
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 2
+			border: 6px solid $white
+			border-left-color: $main
+			border-radius: 50%
+			transition: all 0.3s ease-in-out
+		&:hover
+			&:before
+				transform: rotate(-90deg)
+			.small-deskr
+				bottom: 0				
+				transition-delay: 0.3s
+		img
+			width: 90%
+			position: absolute
+			top: 50%
+			left: 5%
+			z-index: -2
+			max-height: 248px			
+			transform: translateY(-50%)
+		.small-deskr
+			position: absolute
+			width: 100%
+			height: 50%
+			padding: 10px 15px			
+			bottom: -50%
+			left: 0
+			text-align: center
+			z-index: -1
+			transition: all 0.3s ease-in-out
+			background-color: $main
+			color: $white
 
 //ALWAYS END
 @import "_preloader.sass"

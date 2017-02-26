@@ -27,6 +27,9 @@
 			.btn
 				min-width: 125px
 				vertical-align: top
+	.fast-order-small
+		.title-defoult
+			font-size: 22px!important
 
 @media only screen and (max-width : 992px)
 	header 
@@ -49,6 +52,14 @@
 		.tabs
 			margin: 0!important
 			padding: 20px 30px
+			&.index
+				&:before
+					left: 0
+					height: 150vh
+				li.active:before
+					right: initial
+					left: -30px
+					width: 90px
 			li
 				button.active
 					background-color: $main
@@ -60,7 +71,28 @@
 			.content-item
 				right: 50%
 				@include transform(translateX(50%))
-			
+
+	.fast-order-small
+		.title-block
+			i
+				display: none
+			.title-defoult
+				text-align: center
+				left: 0
+				min-height: 120px!important
+		.button-block
+			min-height: 100px!important
+
+	section.more-info 
+		.item 
+			.img-wraper
+				margin-bottom: 0
+			p
+				max-width: 420px
+				margin: 0 auto
+
+	.sub-title-triangle
+		margin-bottom: 20px
 
 
 @media only screen and (max-width : 768px)

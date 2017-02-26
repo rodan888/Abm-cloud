@@ -1,0 +1,21 @@
+section.cases
+	h3.title-triangle Примеры итогов внедрения
+	h3.sub-title-triangle.text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, distinctio.	
+	div.content
+			div.container
+				div.row
+					div.col-md-12
+						div.case-wrap
+							-
+								var caseList = ['img/case-icon.png','img/brain.png','img/chart-icon.png','img/mon-icon.png','img/users-icon.png']
+							for cases in caseList
+								div.case-item.text.mb3
+									h3 Case title
+									p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat repudiandae itaque cum voluptatum, expedita voluptate facilis neque, omnis tenetur.
+									div.button-wrap
+										a.cut-btn.mt2(href="pdf.pdf" target="_blank")
+											span
+											| download pdf
+									div.case
+										img(src="img/case-arrow.png" alt="alt")
+										img(src= cases alt="alt")

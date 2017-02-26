@@ -1,0 +1,12 @@
+section.clients-list
+	h3.title-triangle Наши клиенты
+	h3.sub-title-triangle.text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, distinctio.	
+	div.container
+		div.row
+			div.col-md-12.center
+				-
+					var caseList = ['img/client1.png','img/client2.png','img/client3.png','img/client4.png','img/client5.png','img/client2.png','img/client3.png','img/client5.png','img/client6.png']
+				for cases in caseList					
+					div.client-item
+						img(src= cases alt="alt")
+						span.small-deskr Lorem ipsum dolor.
