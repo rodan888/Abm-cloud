@@ -30,6 +30,13 @@
 	.fast-order-small
 		.title-defoult
 			font-size: 22px!important
+	
+	section.main-triangle 
+		.video-wrap 
+			iframe
+				width: 430px!important
+				height: 250px!important
+				margin-top: -8px
 
 @media only screen and (max-width : 992px)
 	header 
@@ -94,6 +101,38 @@
 	.sub-title-triangle
 		margin-bottom: 20px
 
+	section.main-triangle
+		text-align: center
+		margin-bottom: 140px
+		&:before
+			bottom: -120px
+		.col-md-6
+			min-height: 250px
+		.descr-block
+			max-width: 485px
+			position: initial
+			margin: 0 auto
+			transform: none
+		.video-wrap
+			margin-top: 35px
+			img.monitor
+				max-width: 460px
+				left: 50%
+				@include transform(translateX(-50%))
+
+	section.fast-order-small
+		.title-block
+			min-height: 85px
+			.title-defoult
+				position: initial
+				transform: none
+				margin-top: 20px
+				min-height: 85px!important
+
+
+	.tabs-wrap
+		padding-top: 20px
+
 
 @media only screen and (max-width : 768px)
 	.animated		
@@ -121,6 +160,9 @@
 					width: 400px
 			.descr-block
 				left: 50px
+	.btn
+		&.big
+			width: 265px
 
 
 @media only screen and (max-width : 480px)
@@ -184,6 +226,27 @@
 				.owl-next
 					right: -18px	
 
+	section.main-triangle
+		margin-bottom: 10px
+		&:before
+			display: none
+		.hills
+			display: none
+		.video-wrap
+			min-height: 295px
+			iframe
+				width: 295px!important
+				height: 168px!important
+				margin-top: -10px	
+			img.monitor
+				max-width: 315px
+
+	.tabs-wrap 
+		.tab
+			&:before
+				bottom: -100px
+				right: 10px
+				font-size: 150px
 
 	footer
 		min-height: 150px
