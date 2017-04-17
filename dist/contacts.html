@@ -77,23 +77,32 @@
           </div>
         </div>
       </section>
-      <section class="contacts mt4 mb4">
+      <section class="extend-form">
         <div class="container">
           <div class="row">
-            <div class="col-md-12">
-              <form>
+            <div class="col-md-6">
+              <div class="phone-list center"><img src="img/logo.png" alt="abm-cloud" class="mt3">
+                <ul>
+                  <li><a href="tel://+380 (44) 207-39-55">+380 (44) 207-39-55</a></li>
+                  <li><a href="tel://+380 (44) 207-39-55">+380 (44) 207-39-55</a></li>
+                  <li><a href="tel://+380 (44) 207-39-55">+380 (44) 207-39-55</a></li>
+                </ul><span class="more">или</span>
+              </div>
+            </div>
+            <div class="col-md-6 contacts">
+              <form class="mt3">
                 <div class="container-fluid">
                   <div class="row">
                     <div class="col-md-4 clrp">
                       <div class="form-group">
-                        <label for="form-text">Name</label>
-                        <input type="text" name="form-text" id="form-text">
+                        <label for="name">Имя</label>
+                        <input type="text" name="name" id="name" placeholder="Nick">
                       </div>
                     </div>
                     <div class="col-md-4 clrp">
                       <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input type="text" name="email" id="email" required>
+                        <input type="email" name="email" id="email" required placeholder="nick@gmail.com">
                       </div>
                     </div>
                     <div class="col-md-4 clrp">
@@ -105,9 +114,9 @@
                   </div>
                 </div>
                 <div class="form-group mt2 textarea-block">
-                  <label for="form-textarea">Description</label>
-                  <textarea name="form-textarea" id="form-textarea" placeholder="Ваше сообщение"></textarea>
-                  <button type="submit" class="btn full">Submit</button>
+                  <label for="fancy-textarea">Сообщение</label>
+                  <textarea name="fancy-textarea" id="fancy-textarea" placeholder="Ваше сообщение"></textarea>
+                  <button type="submit" class="btn full">Отправить</button>
                 </div>
                 <input type="hidden" name="project_name" value="Имя сайта">
                 <input type="hidden" name="admin_email" value="tsumbaluk888@gmail.com">
@@ -120,23 +129,7 @@
       <section class="map-wrap">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-3 clrp contacts-map">
-              <div class="phone-list">
-                <h4>Россия</h4><a href="tel://+7(495) 204-15-09"><i class="fa fa-phone"></i>+7(495) 204-15-09</a>
-                <h4>Казахстан</h4><a href="tel://+7 (727) 311-03-51"><i class="fa fa-phone"></i>+7 (727) 311-03-51</a>
-                <h4>Украина</h4><a href="tel://+380 (44) 207-39-55"><i class="fa fa-phone"></i>+380 (44) 207-39-55</a>
-                <h4>Польша</h4><a href="tel://+48 (22) 206-21-05"><i class="fa fa-phone"></i>+48 (22) 206-21-05</a>
-              </div>
-              <ul class="soc-block">
-                <li><a href="#" target="_blank" rel="nofollow"><i class="fa fa-pinterest"></i></a></li>
-                <li><a href="#" target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#" target="_blank" rel="nofollow"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="#" target="_blank" rel="nofollow"><i class="fa fa-vk"></i></a></li>
-                <li><a href="#" target="_blank" rel="nofollow"><i class="fa fa-github"></i></a></li>
-                <li><a href="#" target="_blank" rel="nofollow"><i class="fa fa-codepen"></i></a></li>
-              </ul>
-            </div>
-            <div class="col-md-9 clrp">
+            <div class="col-md-12 clrp">
               <div id="map">
                 <div data-lat="50.473119" data-lng="30.4500583" data-zoom="5" data-marker="img/marker.png" class="gmap"></div>
               </div>

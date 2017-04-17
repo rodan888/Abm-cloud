@@ -37,6 +37,11 @@
 				width: 430px!important
 				height: 250px!important
 				margin-top: -8px
+			.screenshot
+				left: 20px
+				max-width: 415px
+				top: 20px
+				min-height: 235px
 
 @media only screen and (max-width : 992px)
 	header 
@@ -44,17 +49,29 @@
 			text-align: center
 			.logo
 				margin: 5px 0
+				padding-left: 35px
+				img
+					width: 100px
 			.pnone-block 
 				vertical-align: super
+				width: 125px
 		.nav-wrap
 			display: none
 		.fixed-nav
 			&:before
 				border-width: 85px 85px 0 0
+			&.active
+				.mob-button span
+					background-color: $white				
 			.side-menu
 				display: none!important
 			.mob-button
 				display: block
+				&.active
+					span
+						background-color: $white
+				span
+					background-color: $main
 	.tabs-wrap 
 		.tabs
 			margin: 0!important
@@ -119,6 +136,12 @@
 				max-width: 460px
 				left: 50%
 				@include transform(translateX(-50%))
+			.screenshot
+				left: 50%
+				max-width: 420px
+				top: 20px
+				min-height: 240px				
+				@include transform(translateX(-50%))
 
 	section.fast-order-small
 		.title-block
@@ -129,6 +152,10 @@
 				margin-top: 20px
 				min-height: 85px!important
 
+	.top-image 
+		.content 
+			.text, .title-defoult
+				max-width: 400px
 
 	.tabs-wrap
 		padding-top: 20px
@@ -164,10 +191,97 @@
 		&.big
 			width: 265px
 
+	.advantages 
+		.advantages-wrap
+			margin-bottom: 70px
+			&:after
+				top: -43px!important
+			&:before
+				top: initial!important
+				bottom: -40px
+			>div
+				position: initial
+				transform: none
+				width: 100%
+				text-align: center!important
+			.content-wrap
+				padding-left: 0
+	#content
+		padding: 10px
+
+	.advantages 
+		.advan-item
+			width: 50%
+			min-width: 290px
+			padding: 0
+
+	.foto_list 
+		li
+			margin: 60px 40px!important
+			display: inline-block!important
+
+	.cases 
+		.case-item
+			padding: 170px 0 0 0!important
+			.case
+				left: 50%!important
+				right: initial!important
+		.button-wrap
+			text-align: center!important
+
 
 @media only screen and (max-width : 480px)
 	body
 		padding-bottom: 150px
+		p, li
+			font-size: 14px
+		.btn
+			min-width: 140px
+	
+	.popup 
+		form.style
+			min-width: 275px
+
+	.send-section
+		height: 330px
+		.text-variant
+			top: 0
+
+	.top-image.triangle
+		&:before
+			width: 100%
+		.content
+			text-align: center
+		img
+			display: none
+
+	.top-triangle
+		background-size: 800px
+		.content
+			min-height: 160px
+			h1
+				padding: 0 10px
+				font-size: 28px!important
+
+	.popup-content
+		.extend-form
+			padding: 10px 0
+			form
+				min-width: 265px
+				margin-top: 0
+			.form-group 
+				textarea
+					height: 60px!important
+			img
+				max-width: 160px
+				margin: 10px auto
+			.phone-list 
+				min-height: 140px
+				ul li a
+					margin-bottom: 0
+				.more
+					display: none
+
 	section.video 
 		.video-wrap 
 			video
@@ -176,9 +290,24 @@
 			.descr-block
 				left: 15px
 				top: 34%
+			
+			
 
+	section.advan 
+		padding-top: 30px
+		.percent-info
+			margin-bottom: 25px
+			&:after
+				display: none
+			img
+				display: none
+	
 	.tabs-wrap
+		.tab
+			padding-left: 0
 		.tabs
+			&.index:before
+				display: none
 			&:before
 				top: -70px
 				height: 365px
@@ -188,6 +317,7 @@
 				width: 100%
 			.content-item
 				width: 100%
+
 	.presentation
 		display: none
 
@@ -211,11 +341,14 @@
 		form.style
 			width: 94%
 			left: 3%
-			top: 42%
+			top: 70px
 			margin-left: 0
+			padding: 20px 5px
 			transform: none
+			text-align: center
 			input
-				width: 65%
+				width: 60%
+				margin-right: -5px
 			.btn
 				min-width: 105px
 	.slider-custom 
@@ -235,11 +368,18 @@
 		.video-wrap
 			min-height: 295px
 			iframe
-				width: 295px!important
-				height: 168px!important
-				margin-top: -10px	
+				width: 245px!important
+				height: 140px!important
+				margin-top: -11px
 			img.monitor
 				max-width: 315px
+			.screenshot
+				left: 10px!important
+				max-width: 240px!important
+				top: 10px!important
+				min-height: 136px!important
+				transform: none
+
 
 	.tabs-wrap 
 		.tab
@@ -247,6 +387,49 @@
 				bottom: -100px
 				right: 10px
 				font-size: 150px
+
+	.advantages
+		margin-bottom: 0px
+		.advantages-wrap 
+			.content-wrap
+				&:before
+					display: none
+
+	.extend-form 
+		.phone-list
+			min-height: 300px
+			&:before
+				right: 0
+				top: initial
+				bottom: 0
+				height: 1px
+				width: 100%
+				border-bottom: 1px dashed #009ee0
+			.more
+				top: initial
+				bottom: -50px
+				right: 50%
+				margin-right: -50px
+		img
+			width: 100%
+			max-width: 280px
+	
+	.foto_wrap,.clients-list
+		margin-bottom: 90px
+	.foto_list 
+		li
+			margin: 15px 0!important
+			display: inline-block!important
+			width: 200px
+			min-width: 200px
+			height: 200px
+			&:hover
+				button
+					top: 88px
+					left: 58px
+		img
+			top: -40px
+			right: -60px
 
 	footer
 		min-height: 150px
@@ -274,3 +457,8 @@
 					border-width: 1140px 340px 0!important
 					bottom: 0px!important
 					left: -202px!important
+@media only screen and (min-width : 1660px)
+	section.main-triangle 
+		margin-bottom: 140px
+		.hills
+			bottom: -105px

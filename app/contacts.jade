@@ -5,32 +5,52 @@ html.no-js(lang="ru")
 		include templates/structure/header
 		main
 			include templates/widgets/contacts-top-section
-			section.contacts.mt4.mb4
-				div.container
-					div.row
-						div.col-md-12
-							form
-								div.container-fluid
-									div.row
-										div.col-md-4.clrp
-											div.form-group
-												label(for="form-text") Name
-												input(type="text" name="form-text" id="form-text")
-										div.col-md-4.clrp
-											div.form-group
-												label(for="email") E-mail
-												input(type="text" name="email" id="email" required)
-										div.col-md-4.clrp
-											div.form-group
-												label(for="place") Должность
-												input(type="text" name="place" id="place" required placeholder="Manager")
-								div.form-group.mt2.textarea-block
-									label(for="form-textarea") Description
-									textarea(name="form-textarea" id="form-textarea" placeholder="Ваше сообщение")
-									button(type="submit" class="btn full") Submit
-								input(type="hidden" name="project_name" value="Имя сайта")
-								input(type="hidden" name="admin_email" value="tsumbaluk888@gmail.com")
-								input(type="hidden" name="form_subject" value="Заявка с имя сайта")
+			include templates/widgets/send-form
+			//- section.contacts.mt4.mb4
+			//- 	div.container
+			//- 		div.row
+			//- 			div.col-md-3.clrp.contacts-map
+			//- 				div.phone-list
+			//- 					h4 Россия
+			//- 					a(href="tel://+7(495) 204-15-09")
+			//- 						i.fa.fa-phone
+			//- 						| +7(495) 204-15-09
+			//- 					h4 Казахстан
+			//- 					a(href="tel://+7 (727) 311-03-51")
+			//- 						i.fa.fa-phone
+			//- 						| +7 (727) 311-03-51
+			//- 					h4 Украина
+			//- 					a(href="tel://+380 (44) 207-39-55")
+			//- 						i.fa.fa-phone
+			//- 						| +380 (44) 207-39-55
+			//- 					h4 Польша
+			//- 					a(href="tel://+48 (22) 206-21-05")
+			//- 						i.fa.fa-phone
+			//- 						| +48 (22) 206-21-05
+			//- 				include templates/tpl/soc-block
+			//- 			div.col-md-9
+			//- 				form
+			//- 					div.container-fluid
+			//- 						div.row
+			//- 							div.col-md-4.clrp
+			//- 								div.form-group
+			//- 									label(for="form-text") Name
+			//- 									input(type="text" name="form-text" id="form-text")
+			//- 							div.col-md-4.clrp
+			//- 								div.form-group
+			//- 									label(for="email") E-mail
+			//- 									input(type="text" name="email" id="email" required)
+			//- 							div.col-md-4.clrp
+			//- 								div.form-group
+			//- 									label(for="place") Должность
+			//- 									input(type="text" name="place" id="place" required placeholder="Manager")
+			//- 					div.form-group.mt2.textarea-block
+			//- 						label(for="form-textarea") Description
+			//- 						textarea(name="form-textarea" id="form-textarea" placeholder="Ваше сообщение")
+			//- 						button(type="submit" class="btn full") Submit
+			//- 					input(type="hidden" name="project_name" value="Имя сайта")
+			//- 					input(type="hidden" name="admin_email" value="tsumbaluk888@gmail.com")
+			//- 					input(type="hidden" name="form_subject" value="Заявка с имя сайта")
 			include templates/widgets/map-block
 			
 
