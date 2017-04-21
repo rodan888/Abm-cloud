@@ -297,6 +297,25 @@ section.video
 		@include transform(translate(-50%,-50%))
 		&.succes-text
 			top: 64%
+.mailcimp
+	min-height: 210px
+	form.style
+		position: initial!important
+		transform: none
+		margin-bottom: 40px
+		input
+			width: 68%
+			padding-left: 10px
+		.btn
+			background-color: $red
+			color: $white
+	.text-variant
+		text-align: center
+		width: 600px
+		margin: 40px auto 0
+		top: 36%
+		left: 50%
+		color: $white
 
 .contacts
 	form
@@ -817,6 +836,38 @@ section.more-info
 
 .extend-form
 	padding: 30px 0
+	&.hils
+		background-image: url(../img/hill-svg1.png)
+		background-repeat: no-repeat
+		background-position: bottom right
+		padding-top: 100px
+		min-height: 675px
+		.phone-list
+			min-height: 450px
+			&:before
+				// border-color: $red
+				display: none
+			.more
+				// background-color: $red
+				display: none
+			a
+				color: $red
+		form
+			.btn
+				background-color: $red
+				border-color: $red
+				&:hover
+					background-color: $white
+					color: $red
+			textarea
+				background-color: transparent
+			label,label:before
+				color: $red
+	&.rightPos
+		.phone-list:before
+			display: none
+		.more
+			display: none		
 	.phone-list
 		min-height: 356px
 		position: relative
@@ -1316,6 +1367,32 @@ footer
 .tabs-wrap
 	padding: 70px 0 50px
 	position: relative
+	&.tooltip
+		padding-top: 110px
+		margin-top: -30px
+		background: linear-gradient(to right,rgba(255,255,255,0) 0,rgba(255,255,255,.38) 38%,#009ee0 100%)
+		.tab:before
+			display: none
+		.soc-block
+			position: absolute
+			bottom: -40px
+			left: 30px
+			li
+				display: inline-block
+				vertical-align: top
+				a
+					font-size: 20px
+					color: $white
+					border-radius: 50%
+					background-color: $red
+					width: 40px
+					height: 40px
+					line-height: 40px
+					display: block
+					text-align: center
+					transition: font-size 0.3s
+					&:hover
+						font-size: 30px
 	.tabs
 		background-color: $white
 		position: relative
@@ -1329,6 +1406,7 @@ footer
 			margin-bottom: 60px
 			&:before
 				height: 100vh
+				max-height: 750px
 				top: -15vh				
 			li
 				position: relative
@@ -1442,6 +1520,39 @@ footer
 				list-style-position: inside
 		p
 			margin-bottom: 10px
+		img
+			width: 100%
+			max-width: 500px
+			margin-top: 50px
+		.tooltip
+			position: absolute
+			top: -140px
+			right: 0
+			background-color: $red
+			width: 100%
+			padding: 10px 20px
+			max-width: 400px
+			box-shadow: 1px 1px 5px $gray
+			color: $white
+			&:before
+				position: absolute
+				content: ''
+				width: 0
+				height: 0
+				left: 60px
+				bottom: -37px
+				border-style: solid
+				border-width: 40px 30px 0
+				border-color: $red transparent transparent transparent
+			a
+				color: $white
+			ul,li
+				margin: 0
+				color: $black
+				p
+					padding-left: 30px
+					border-bottom: 1px solid $white
+					color: $white
 
 .cases
 	.case-wrap
