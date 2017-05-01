@@ -309,9 +309,11 @@ section.video
 		.btn
 			background-color: $red
 			color: $white
+			margin-left: -5px
+			border: none
 	.text-variant
 		text-align: center
-		width: 600px
+		max-width: 600px
 		margin: 40px auto 0
 		top: 36%
 		left: 50%
@@ -1099,11 +1101,15 @@ footer
 			width: 300px
 			height: 300px
 			overflow: hidden
+			position: relative
 			border-left: 10px solid $main
 			@include border-radius(50%)
 			img
-				height: 100%
-				width: auto
+				position: absolute
+				max-width: 96%
+				top: 50%
+				left: 2%
+				@include transform(translateY(-50%))				
 		.comment-content	
 			min-height: 420px
 			position: relative
@@ -1250,6 +1256,13 @@ footer
 			border-style: solid
 			border-width: 60px 45px 0 45px
 			border-color: $white transparent transparent transparent
+		.btn
+			margin-left: 45px
+		p
+			color: $textColor
+			font-family: "RobotoLight"
+			font-weight: 100
+			line-height: 30px
 		&:nth-child(odd)
 			background: -moz-linear-gradient(-45deg,  rgba(28,167,221,1) 0%, rgba(255,255,255,1) 56%)
 			background: -webkit-linear-gradient(-45deg,  rgba(28,167,221,1) 0%,rgba(255,255,255,1) 56%)
@@ -1396,7 +1409,7 @@ footer
 	.tabs
 		background-color: $white
 		position: relative
-		z-index: 100
+		z-index: 80
 		margin-top: 40px
 		margin-left: 125px
 		padding: 20px 0
@@ -1473,12 +1486,12 @@ footer
 			width: 600px
 		.content-item
 			position: absolute
-			top: 10px
-			right: 20px
-			width: 590px
+			top: 25px
+			right: 40px
+			width: 550px
 			overflow: hidden
 			z-index: -1
-			height: 375px
+			height: 345px
 			img
 				width: 0%
 				@include transition(width 0.6s)
