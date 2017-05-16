@@ -391,10 +391,12 @@ section.video
 		min-width: 500px
 		background-color: $white
 		box-shadow: 0 1px 3px $blackLight
+
 .gmap-card
 	display: inline-block
 	vertical-align: top
 	max-width: 540px
+	min-height: 450px
 	width: 50%
 	min-width: 300px
 	margin-left: 10px
@@ -402,7 +404,7 @@ section.video
 	margin-bottom: 30px
 .gmap	
 	width: 100%
-	height: 350px
+	height: 300px
 
 
 .cut-btn
@@ -854,11 +856,9 @@ section.more-info
 		min-height: 675px
 		.phone-list
 			min-height: 450px
-			&:before
-				// border-color: $red
+			&:before				
 				display: none
-			.more
-				// background-color: $red
+			.more				
 				display: none
 			a
 				color: $red
@@ -872,7 +872,7 @@ section.more-info
 			textarea
 				background-color: transparent
 			label,label:before
-				color: $red
+				color: $textColor
 	&.rightPos
 		.phone-list:before
 			display: none
@@ -1490,6 +1490,31 @@ footer
 						height: 1px
 						background-color: $main
 	.contentent-wrap
+		a
+			display: inline-block
+			position: relative
+			&:before
+				position: absolute
+				content: "\f0a6"
+				left: 50%
+				bottom: 150px
+				margin-left: -40px				
+				width: 80px
+				height: 80px
+				text-align: center
+				line-height: 80px
+				color: $main
+				font-family: 'FontAwesome'
+				font-size: 24px
+				box-shadow: 0px -3px 2px #010102
+				border-top-left-radius: 50px
+				border-top-right-radius: 50px
+				background-color: #010102
+				transition: font-size 0.3s
+			&:hover:before
+				font-size: 34px
+
+
 		img.monitor
 			width: 600px
 		.content-item
@@ -1615,17 +1640,20 @@ footer
 		transform-style: preserve-3d
 		-webkit-backface-visibility: hidden
 		backface-visibility: hidden
+		border-radius: 50%
+		border-left: 8px solid $main
+		border-bottom: 5px solid $main
 		img
 			position: absolute
+			// &:nth-child(1)
+			// 	transform: translateZ(32px)	
+			// 	max-width: 140px
+			// 	left: 17px
+			// 	top: 16px
 			&:nth-child(1)
-				transform: translateZ(32px)	
-				max-width: 140px
-				left: 17px
-				top: 16px
-			&:nth-child(2)
 				transform: translateZ(58px)	
 				max-width: 90px
-				left: 45px
+				left: 30px
 				top: 38px
 
 .clients-list
