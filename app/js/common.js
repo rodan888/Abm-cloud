@@ -18,10 +18,10 @@ $(function() {
 					navigation: true,
 					singleItem: item,
 					items: item == true ? 1 : 5,
-					autoPlay: false,	
+					autoPlay: false,  
 					pagination: true,
 					scrollPerPage: true,
-					navigationText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>']								
+					navigationText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>']                
 				}
 			}
 		},
@@ -40,7 +40,7 @@ $(function() {
 			var linc = el.find('.tab-link'),
 				tab  = el.find('.tab'),
 				dataShow,dataEq;
-			linc.on('click',function(){				
+			linc.on('click',function(){       
 				dataShow = $(this).data('show');
 				dataEq = $(this).index();
 				linc.removeClass('active');
@@ -57,27 +57,27 @@ $(function() {
 		},
 		logoAnim: function(){
 			function isEven(n) {
-			  return n % 2 == 0;
+				return n % 2 == 0;
 			};
 			var cases  = $('section.cases'),
 					icon   = cases.find('.case'),
 					width  = $(window).width(),
 					height = cases.height();
 
-			cases.mousemove(function(e) {		
+			cases.mousemove(function(e) {   
 				var xPos = e.pageX;
 				var yPos = e.pageY;
 				var xPos = xPos - (Math.floor(width/2));
-				var yPos = yPos - (Math.floor(height/2));				
+				var yPos = yPos - (Math.floor(height/2));       
 				icon.css({
 					'-webkit-transform': 'rotateY('+ xPos/20 +'deg)',
 					'transform': 'rotateY('+ xPos/20 +'deg)'
-				});				
+				});       
 			});
 		},
 		popup: function(el){
 			el.on('click',function(event){
-				event.preventDefault();		
+				event.preventDefault();   
 				var show = $(this).data('show'),
 						pop  = $('#'+ show);
 
@@ -112,11 +112,11 @@ $(function() {
 			});
 		},
 		scrollEvents: function(){
-			$(document).scroll(function(){	
+			$(document).scroll(function(){  
 				var scrl = $(document).scrollTop();
 
-				if(scrl >	main.opt.header.height()){
-					main.opt.menu.addClass('active');					
+				if(scrl > main.opt.header.height()){
+					main.opt.menu.addClass('active');         
 				}else{
 					if($('.stick-menu').hasClass('active')){
 						$('.side-menu').click();
@@ -159,7 +159,7 @@ $(function() {
 			data: th.serialize()
 		}).done(function() {
 			alert("Thank you!");
-			setTimeout(function() {		
+			setTimeout(function() {   
 				th.trigger("reset");
 			}, 1000);
 		});
@@ -182,12 +182,12 @@ $(function() {
 		};
 		tabs();
 
-		function logoAnim(){			
+		function logoAnim(){      
 			var logo = $('.hills');
 			var width = $(window).width();
 			var height = $('header').height();
 
-			$('.video').mousemove(function(e) {		
+			$('.video').mousemove(function(e) {   
 				var xPos = e.pageX;
 				var yPos = e.pageY;
 
@@ -198,75 +198,133 @@ $(function() {
 					//'-webkit-transform': 'rotateY('+ xPos/20 +'deg) rotateX('+ (-yPos/20) +'deg)',
 					//'transform': 'rotateY('+ xPos/20 +'deg) rotateX('+ (-yPos/20) +'deg)'
 					'transform': 'translate('+ yPos/20 +'px, '+ xPos/20 +'px)'
-				});		
+				});   
 			});
 		};
 		//logoAnim();
 
+		$(document).on('click','.js-videoPoster',function(ev) {
+			ev.preventDefault();
+			var $poster = $(this);
+			var $wrapper = $poster.closest('.js-videoWrapper');
+			videoPlay($wrapper);
+		});
+
+		function videoPlay($wrapper) {
+			var $iframe = $wrapper.find('.js-videoIframe');
+			var src = $iframe.data('src');
+			$wrapper.addClass('videoWrapperActive');
+			$iframe.attr('src',src);
+		}
+
+		$(document).on('click','.closeWideo',function(ev){
+			videoStop($(this).parent());
+		});
+
+		function videoStop($wrapper){
+			if (!$wrapper) {
+				var $wrapper = $('.js-videoWrapper');
+				var $iframe = $('.js-videoIframe');
+			} else {
+				var $iframe = $wrapper.find('.js-videoIframe');
+			}
+			$wrapper.removeClass('videoWrapperActive');
+			$iframe.attr('src','');
+		};
+
+		$.getJSON("http://ip-api.com/json/?callback=?", function(data){
+			var phone = $('header .pnone-block a:first-child');
+      var country = data.country, 
+       		ip      = data.query;
+
+			switch(country) {
+			  case 'Ukraine':
+			  	phone.text('+380 (44) 207-39-55');
+			  	phone.attr('href','tel://+380 (44) 207-39-55');
+			    break;
+			  case 'Russia':
+			  	phone.text('+7 (495) 204-15-09');
+			  	phone.attr('href','tel://+7 (495) 204-15-09');
+			    break;
+			  case 'Kazakhstan':
+			  	phone.text('+7 (727) 350-76-33');
+			  	phone.attr('href','tel://+7 (727) 350-76-33');
+			    break;
+			  case 'Estonia':
+			  	phone.text('+372 884-00-64');
+			  	phone.attr('href','tel://+372 884-00-64');
+			    break;
+			  default:
+			  	phone.text('+380 (44) 207-39-55');			    
+			  	phone.attr('href','tel://+380 (44) 207-39-55');			  	
+			};
+        // console.log(country + "," + ip);
+        //Ukraine Russia Kazakhstan Estonia
+    });
 
 		var grid = $('.grid');
-      	grid.packery();
-      	grid.find('.blog-grid').hoverdir({hoverElem:'.site-descr'});
+				grid.packery();
+				grid.find('.blog-grid').hoverdir({hoverElem:'.site-descr'});
 
-  //    var pageScroll = {
-		// 	itemAc: $('nav ul li,menu ul li'),
-		// 	addClas: function(el){
-		// 		pageScroll.itemAc.removeClass('active');
-		// 		$(el).addClass('active');		
-		// 	},
-		// 	init: function(){
-		// 		pageScroll.itemAc.on('click',function(){		
-		// 			pageScroll.addClas(this);			
-		// 			var pos = $($(this).attr('data-id')).offset().top;
-		// 			$('body').animate({scrollTop: pos}, 1000);			
-		// 		});
-		// 	}
+	//    var pageScroll = {
+		//  itemAc: $('nav ul li,menu ul li'),
+		//  addClas: function(el){
+		//    pageScroll.itemAc.removeClass('active');
+		//    $(el).addClass('active');   
+		//  },
+		//  init: function(){
+		//    pageScroll.itemAc.on('click',function(){    
+		//      pageScroll.addClas(this);     
+		//      var pos = $($(this).attr('data-id')).offset().top;
+		//      $('body').animate({scrollTop: pos}, 1000);      
+		//    });
+		//  }
 		// }
 
 		$('.animation-arrow').on('click', function(){
 			var h = $('.tabs-wrap').offset().top;
-			$('body,html').animate({scrollTop: h}, 1000);			
+			$('body,html').animate({scrollTop: h}, 1000);     
 		});
 
 		//$('#test').on('click', function(){
-		//	if($(this).hasClass('active')){
-		//		$('.disc-product .disc-item').css('width','400px');				
-		//		$(this).removeClass('active');
-		//	}else{
-		//		$(this).addClass('active');
-		//		$('.disc-product .disc-item').css('width','0px');				
-		//	};
+		//  if($(this).hasClass('active')){
+		//    $('.disc-product .disc-item').css('width','400px');       
+		//    $(this).removeClass('active');
+		//  }else{
+		//    $(this).addClass('active');
+		//    $('.disc-product .disc-item').css('width','0px');       
+		//  };
 		//});
 
 		// $('.disc-product .disc-item').on('click', function(){
-		// 	var	that	 = $(this);
-		// 	 	deg 	   = $(this).data('deg'),
-		// 	 	ind      = $(this).data('index'),
-		// 		products = $('.product-wrap .product-item'),
-		// 		addClass = function(){
-		// 			that.addClass('active');
+		//  var that   = $(this);
+		//    deg      = $(this).data('deg'),
+		//    ind      = $(this).data('index'),
+		//    products = $('.product-wrap .product-item'),
+		//    addClass = function(){
+		//      that.addClass('active');
 
-		// 			products.eq(ind-1).addClass('active');
-		// 		};
-		// 	deg+=90;
-		// 	products.removeClass('active');
-		// 	$('.disc-product .disc-item').removeClass('active');
+		//      products.eq(ind-1).addClass('active');
+		//    };
+		//  deg+=90;
+		//  products.removeClass('active');
+		//  $('.disc-product .disc-item').removeClass('active');
 
-		// 	$('.disc-product').css({
-		// 		'transform': 'rotate('+ deg +'deg)'
-		// 	});
-		// 	setTimeout(addClass,1000);
+		//  $('.disc-product').css({
+		//    'transform': 'rotate('+ deg +'deg)'
+		//  });
+		//  setTimeout(addClass,1000);
 		// });
 		
-		// if(localStorage.getItem("User")){			
-		// 	$('.loader-wrap').detach();
-		// 	//localStorage.clear()
+		// if(localStorage.getItem("User")){      
+		//  $('.loader-wrap').detach();
+		//  //localStorage.clear()
 		// }else{
-		// 	localStorage.setItem("User", true)
+		//  localStorage.setItem("User", true)
 		// };
 
-		// setTimeout(function(){			
-		// 	$('.loader-wrap').fadeOut(600);
+		// setTimeout(function(){     
+		//  $('.loader-wrap').fadeOut(600);
 		// }, 5000);
 
 		try {
@@ -274,6 +332,6 @@ $(function() {
 			if($("html").hasClass("chrome")) {
 					$.smoothScroll();
 			}
-		} catch(err) {};	
+		} catch(err) {};  
 	});
 });
