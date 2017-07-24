@@ -1,0 +1,34 @@
+section.lowpoly-cards
+	-
+		var list = ['img/triangle-low-poly.png','img/hexagon-low-poly.png','img/triangle-low-poly.png']
+	for item, index in list
+		div.cont-wrap
+			div.container
+				div.row
+					.col-md-12
+						if index%2 === 0
+							img(src= item alt="alt")
+							div.content
+								h3.title-defoult.mb3 Lorem ipsum dolor sit amet, consectetur.
+								ul
+									li Lorem ipsum dolor sit amet, consectetur adipisicing.
+									li Lorem ipsum dolor sit amet, consectetur adipisicing.
+									li Lorem ipsum dolor sit amet, consectetur adipisicing.
+									li Lorem ipsum dolor sit amet, consectetur adipisicing.
+								a(href="#" class="btn big mt2") Read more
+								span.decor
+							//- div.col-sm-6
+							//- div.col-sm-6
+						else
+							div.content
+								h3.title-defoult.mb3 Lorem ipsum dolor sit amet, consectetur.
+								ul
+									li Lorem ipsum dolor sit amet, consectetur adipisicing.
+									li Lorem ipsum dolor sit amet, consectetur adipisicing.
+									li Lorem ipsum dolor sit amet, consectetur adipisicing.
+									li Lorem ipsum dolor sit amet, consectetur adipisicing.
+								a(href="#" class="btn big mt2") Read more
+							img(src= item alt="alt")
+							span.decor
+							//- div.col-sm-6
+							//- div.col-sm-6
