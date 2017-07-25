@@ -16,6 +16,13 @@
 	position: relative
 	vertical-align: top
 
+%extend_gradient
+	background: #1adec9
+	background: -moz-linear-gradient(45deg, #1adec9 1%, #009ee0 100%)
+	background: -webkit-linear-gradient(45deg, #1adec9 1%,#009ee0 100%)
+	background: linear-gradient(45deg, #1adec9 1%,#009ee0 100%)
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1adec9', endColorstr='#009ee0',GradientType=1 )
+
 //Custom Styles Here
 .bread
 	margin: 20px 0
@@ -739,6 +746,7 @@ section.main-triangle
 
 section.fast-order-small
 	background-color: $main
+	@extend  %extend_gradient
 	padding: 8px 0
 	z-index: 10
 	position: relative
@@ -1105,29 +1113,65 @@ footer
 	.comment-item
 		height: 420px
 		.user-photo
-			margin: 60px 0
-			width: 300px
-			height: 300px
-			overflow: hidden
-			position: relative
-			border-left: 10px solid $main
-			@include border-radius(50%)
-			img
-				position: absolute
-				max-width: 96%
-				top: 50%
-				left: 2%
-				@include transform(translateY(-50%))				
-		.comment-content	
+			@extend  %extend_gradient
+			margin: 0px 0
+			width: 100%
 			min-height: 420px
 			position: relative
-			p
+			&:before
 				position: absolute
-				top: 50%
+				content: ''
+				top: 0
 				left: 0
 				width: 100%
-				padding: 0 40px
+				height: 100%
+				background-image: url("../img/rewiew-bg.png")
+				background-repeat: no-repeat
+				background-size: cover			
+			.image-wrap
+				position: absolute
+				top: 50%
+				left: 50%
+				margin-left: -95px
+				margin-top: -95px
+				width: 190px
+				height: 190px
+				overflow: hidden
+				background-color: $white
+				border: 1px solid $grayLight
+				box-shadow: 0 3px 13px #999
+				// @include border-radius(50%)
+				img
+					max-width: 96%
+					position: absolute					
+					top: 50%
+					left: 2%
+					@include transform(translateY(-50%))
+		.comment-content	
+			margin: 25px 0
+			min-height: 420px
+			position: relative
+			box-shadow: 0px 1px 6px $gray
+			h3.title
+				position: absolute
+				left: -15%
+				padding: 10px
+				margin-top: 40px
+				text-align: center
+				color: $textColor
+				background-color: $white
+				font-family: 'OpenSansBold'
+				text-transform: initial
+				box-shadow: 0px 1px 6px $gray			
+			p.text
+				position: absolute
+				top: 54%
+				left: -15%
+				width: 100%
+				padding: 30px 40px
 				font-style: italic
+				box-shadow: 0px 1px 6px $gray			
+				background-color: $white
 				@include transform(translateY(-50%))
 				&:before,
 				&:after
@@ -1254,46 +1298,85 @@ footer
 	.cont-wrap		
 		min-height: 420px
 		position: relative
+		&:last-child
+			.col-md-12
+				margin-bottom: 80px			
 		.col-md-12
 			min-height: 420px
-			margin-bottom: 110px
+			margin-bottom: 30px
 		&:nth-child(odd)
-			img
-				left: 0
-			.content
-				right: 0
+			text-align: left
+			.card-wrap
+				left: 500px		
 		&:nth-child(even)
-			img
-				right: 0
-			.content
-				left: 0
+			text-align: right
+			.card-wrap
+				right: 500px
+			span.decor
+				top: 55px!important
+				left: -45px!important
+				right: initial!important
+				height: 310px!important
+		&:nth-child(3n+2)
+			.image-wrap
+				&:before
+					top: 70%!important		
 		img
-			position: absolute
 			width: 100%
 			max-width: 500px
+			opacity: 0.8
 		.content
-			position: absolute
-			top: 50%
-			width: 100%
-			max-width: 550px
+			position: relative
+			width: 80%
+			margin: 50px auto 0
 			background-color: $white
-			box-shadow: 0 0 5px $blackLight
 			padding: 25px 10px
 			color: $textColor
 			font-size: 14px
-			text-align: center
-			z-index: 10
-			transform: translateY(-50%)			
-			// span.decor
-			// 	position: absolute				
-			// 	top: 10px
-			// 	right: 25px
-			// 	width: 100%
-			// 	height: 100%
-			// 	background-color: $main
-			// 	z-index: -1
+			z-index: 10			
+			> div
+				display: inline-block
+				vertical-align: top
+				position: relative
+			.image-wrap
+				&:before
+					position: absolute
+					content: attr( data-index )
+					top: 50%
+					left: 50%
+					font-size: 80px
+					font-family: 'OpenSansBold'
+					transform: translate(-50%,-50%)
+			.card-wrap
+				position: absolute
+				top: 50%
+				box-shadow: 4px 4px 16px 0px #dadada
+				padding: 25px
+				background-color: $white
+				transform: translateY(-50%)
+				transition: box-shadow 0.3s
+				text-align: left
+				// &:before
+				// 	position: absolute
+				// 	content: ''
+				// 	width: 100%
+				// 	height: 100%
+				// 	background-color: $main
+				// 	z-index: -1
+				&:hover
+					box-shadow: 1px 1px 4px 0px #dadada
+			span.decor
+				position: absolute
+				top: 90px
+				right: -10px
+				width: 440px
+				height: 240px
+				background-color: $main
+				z-index: -1
+				opacity: 0.5
 			h3
 				font-size: 20px
+				font-family: 'OpenSansBold'
 			
 		
 
@@ -1461,7 +1544,7 @@ footer
 			border-color: $blackLight 
 
 .tabs-wrap
-	padding: 70px 0 50px
+	padding: 110px 0 80px
 	position: relative
 	&.tooltip
 		padding-top: 110px

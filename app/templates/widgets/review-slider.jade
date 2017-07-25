@@ -1,17 +1,19 @@
-section
-	div.container
+section.mb6
+	div.container-fluid.clrp
 		div.row
 			div.col-md-12
-				h2.title-section.mb2.mt3 Отзывы наших клиентов
+				//- h2.title-section.mb2.mt3 Отзывы наших клиентов
 				div.slider.slider-custom.comment-wrap
 					-
 						var slideList = ['img/client1.png','img/client2.png','img/client3.png']
 					for slide in slideList
 						div.item.comment-item
-							div.container
+							div.container-fluid
 								div.row
-									div.col-sm-6
+									div.col-sm-6.clrp
 										div.user-photo
-											img(src= slide alt="alt")
-									div.col-sm-6.comment-content
+											div.image-wrap
+												img(src= slide alt="alt")
+									div.col-sm-6.comment-content.clrp
+										h3.title Lorem ipsum dolor sit.
 										p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores tempora nemo, sed reiciendis, assumenda placeat nesciunt laudantium itaque temporibus doloribus ipsam expedita at voluptates labore, a quos eius eligendi nostrum. Est dignissimos officia accusantium aliquid ullam earum, rem facilis labore.
